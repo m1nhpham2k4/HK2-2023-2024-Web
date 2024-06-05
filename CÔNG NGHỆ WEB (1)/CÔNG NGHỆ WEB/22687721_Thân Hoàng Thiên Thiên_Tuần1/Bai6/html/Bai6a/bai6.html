@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="22687721_Thân Hoàng Thiên Thiên_Tuần 1" content="form1">
+    <title>Form1: Registration Form</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body style="background-color: lightblue;">
+    <table align="center" style="background-color: rgb(33, 222, 255);">
+        <tr align="center">
+            <td>
+                <h1>Jackson</h1>
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                <h1>Electronics</h1>
+            </td>
+        </tr>
+    </table>
+    <h2 align="center">Registration Form</h2>
+    <p align="center">Register your Jackson Electronics product here</p>
+    <form action="">
+        <label for="fname">First Name: </label>
+        <input type="text" id="fname" name="fname" value="">
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname" value=""><br>
+        <label for="address1">Address #1:</label>
+        <input type="text" id="address1" name="address1" value=""> <br>
+        <label for="address2">Address #2:</label>
+        <input type="text" id="address2" name="address2" value=""> <br>
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city" value="">
+        <label for="state">State:</label>
+        <input type="text" name="state" id="state" value="">
+        <label for="zip">Zip:</label>
+        <input type="text" name="zip" id="zip" value=""> <br>
+        <label for="country">Country:</label>
+        <input type="text" name="country" id="country" value="United Stated">
+        <hr>
+        <label for="product">Product:</label>
+        <select name="product" id="product-select">
+            <option value="ScanMaster">ScanMaster</option>
+            <option value="PrintMaster">PrintMaster</option>
+            <option value="FuncMaster">FuncMaster</option>
+        </select>
+        <br>
+        <label for="datePurchased">Date Purchased:</label>
+        <input type="text" name="datePurchased" id="datePurchased" value=""> <br>
+        <label for="serial">Serial#:</label>
+        <input type="text" name="serial" id="serial" value=""><br>
+        <label for="usedFor">Used for:</label>
+        <input type="radio" name="usedFor" value="1"> Home
+        <input type="radio" name="usedFor" value="0"> Educational Institution <br>
+        <input type="radio" name="usedFor" value="2"> Business
+        <input type="radio" name="usedFor" value="3"> Other <br>
+        <input type="radio" name="usedFor" value="4"> Govemment <br>
+        <label for="system">System (check all that apply):</label>
+        <input type="checkbox" name="system" id="win" value="windows">
+        <label for="system1">Windows</label>
+        <input type="checkbox" name="system" id="unix" value="unix">
+        <label for="system2">UNIX</label> <br>
+        <input type="checkbox" name="system" id="mac" value="mac">
+        <label for="system3">Macintosh</label>
+        <input type="checkbox" name="system" id="other" value="other">
+        <label for="system4">Other</label>
+        <br>
+        <hr>
+        <label for="cmt">Comments?:&emsp;</label>
+        <textarea name="cmt" id="cmt" cols="35" rows="5"></textarea>
+        <br>
+        <button type="submit">Click to register</button>
+        <button type="reset">Click to cannel</button>
+    </form>
+
+</body>
+
+</html>

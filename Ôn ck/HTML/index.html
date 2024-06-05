@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="../JS/jQuery.js"></script>
+</head>
+<body>
+    <h1>Kiểm tra nhập liệ<u></u></h1>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Trang chủ</a>
+      </li>
+      <li class="nav-item">
+        <!-- Button trigger modal -->
+        <a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Kiểm tra
+        </a>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Kiểm tra nhập liệu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="" class="form">
+                    <div class="bang" style="border: 1px solid #aaa;">
+                        <table class="table table-borderless">
+                            <tr>
+                                <td>
+                                    <label for="">Mã học viên:</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" placeholder="12345" id="inpMs">
+                                    <span id="errMs">*</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="">Họ tên:</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="" placeholder="Tran Thu Trang" id="inpTen">
+                                    <span id="errten">*</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="">Email:</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="" placeholder="trangthanh_12@gmail.com" id="inpEmail">
+                                    <span id="erremail">*</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="nut pt-2" style="display: flex;">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" style="width: 50%;">Chấp nhận</button>
+                        <button type="button" class="btn btn-danger" style="width: 50%;">Hủy</button>
+                    </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <h3 style="right: 0;">Kiểm tra nhập liệu</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="row">
+        <div class="col-4"><h6>Mã sinh viên:____________</h6></div>
+        <div class="col-4"><h6>Họ tên:____________</h6></div>
+        <div class="col-4"><h6>Lớp:____________</h6></div>
+    <script>
+        $(function(){
+            $("#staticBackdrop").on('shown.bs.modal', function(){
+                $("#inpMs").focus();
+            });
+
+            $("#inpMs").blur(function(){
+                var ms = document.getElementById("inpMs").value;
+                var reg = /^\d{5}$/
+                if(reg.test(ms))
+                    errMs.innerHTML = "Hợp lệ"
+                else{
+                    errMs.innerHTML = "Không hợp lệ yêu cầu 5 số và không được rỗng"
+                    $("#inpMs").focus();
+                }
+            })
+            
+            $("#inpTen").blur(function(){
+                var ten = document.getElementById("inpTen").value;
+                var reg = /^[A-Z]{1}[a-zA-Z]{1,6}(\s([A-Z]{1}[a-zA-Z]{1,6})){1,}$/;
+                if(reg.test(ten)) {
+                    errten.innerHTML = "Hợp lệ"
+                } else {
+                    errten.innerHTML = "Không hợp lệ"
+                }
+            })
+
+
+            $("#inpEmail").blur(function(){
+                var email = parseInt(document.getElementById("inpEmail").value);
+
+                if (email == ) {
+                    erremail.innerHTML = "Email hợp lệ";
+                } else {
+                    erremail.innerHTML = "Email không hợp lệ";
+                }
+            })
+        })
+    </script>
+</body>
+</html>

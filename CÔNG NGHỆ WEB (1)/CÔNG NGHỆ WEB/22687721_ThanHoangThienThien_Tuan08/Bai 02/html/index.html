@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai02</title>
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="../bootstrap-4.4.1-dist/css/bootstrap.css">
+    <!-- jQuery -->
+    <script src="../bootstrap-4.4.1-dist/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap 4 JS -->
+    <script src="../bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+        }
+        
+        .price {
+            min-width: 200px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("input[type='text']").on("input", function() {
+                var sum = 0;
+                $("input[type='text']").each(function() {
+                    var price = parseFloat($(this).closest("tr").find(".price").text().replace(',', ''));
+                    var quantity = parseFloat($(this).val()) || 0;
+                    sum += price * quantity;
+                });
+                $(".total-price").text(sum.toFixed(2));
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <table class="table table-bordered">
+                    <thead class="text-center">
+                        <tr>
+                            <th>STT</th>
+                            <th>Hình ảnh</th>
+                            <th class="price">Giá</th>
+                            <th>Số lượng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="../img/hoa1.png" alt=""></td>
+                            <td class="price">20000</td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><img src="../img/hoa2.png" alt=""></td>
+                            <td class="price">40000</td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><img src="../img/hoa3.png" alt="" width="200px"></td>
+                            <td class="price">30000</td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><img src="../img/hoa4.png" alt="" width="200px"></td>
+                            <td class="price">50000</td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><img src="../img/hoa5.png" alt="" width="200px" height="200px"></td>
+                            <td class="price">30000</td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="text-right">Tổng thành tiền</td>
+                            <td class="total-price">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

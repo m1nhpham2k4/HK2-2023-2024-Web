@@ -1,0 +1,12 @@
+form{
+    color: rgb(27, 9, 160);
+    background-color: rgb(221, 251, 218);
+}
+td{
+    color: rgb(27, 9, 160);
+}
+button, select{
+    border-radius: 5px;
+    border: 2px solid rgb(30, 6, 86);
+    background-color: rgb(226, 225, 228);
+}

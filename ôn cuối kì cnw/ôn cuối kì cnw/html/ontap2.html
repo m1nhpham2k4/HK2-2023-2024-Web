@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jQuery.js"></script>
+    <script src="../js/ontap2.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header style="background-image:url(../img/books.png);height:400px;background-size: cover;">
+        </header>
+        <nav
+            class="navbar navbar-expand-sm navbar-light bg-light"
+        >
+            <div class="container">
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" aria-current="page"
+                                >Trang Chủ
+                                <span class="visually-hidden">(current)</span></a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"        
+                             data-bs-toggle="modal"
+                            data-bs-target="#modalId">Nhập Sách</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered" id="mytable1">
+                    <tr>
+                        <td>STT</td>
+                        <td>Mã Sách</td>
+                        <td>Hình Minh Họa</td>
+                        <td>Ngày Nhập</td>
+                        <td>Số Lượng</td>
+                        <td>NXB</td>
+                        <td>Chiết Khấu</td>
+                        <td>Thể Loại</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Modal trigger button -->
+    
+    <!-- Modal Body -->
+    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+    <div
+        class="modal fade"
+        id="modalId"
+        tabindex="-1"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        
+        role="dialog"
+        aria-labelledby="modalTitleId"
+        aria-hidden="true"
+    >
+        <div
+            class="modal-dialog modal-lg"
+            role="document"
+        >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="modalTitleId">
+                        PHIẾU NHẬP KHO TRỰC TUYẾN
+                    </h1>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form">
+                        <div class="form-group">
+                            <label for="" class="label">Mã Sách</label>
+                            <input type="text" class="form-control" id="masach" onblur="checkMaSach()">
+                            <span class="text-danger" id="span1">*</span>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="" class="label">Hình Minh Họa</label>
+                            <input type="file" class="form-control" id="minhhoa" onblur="checkHinhMinhHoa()">
+                            <span class="text-danger" id="span2">*</span>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="" class="label">Ngày Nhập</label>
+                            <input type="date" class="form-control" id="ngaynhap" onblur="checkNgayNhap()">
+                            <span class="text-danger" id="span3">*</span>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="" class="label">Số Lượng</label>
+                            <input type="number" class="form-control" id="soluong" onblur="kiemTraSoLuong()">
+                            <span class="text-danger" id="span4">*</span>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="" class="label">Nhà Xuất Bản</label>
+                            <select name="" id="nxb" class="form-control" onblur="thaoTacNXB()">
+                                <option value="Nhà xuất bản Trẻ">Nhà xuất bản Trẻ</option>
+                                <option value="Nhà xuất bản Kim Đồng">Nhà xuất bản Kim Đồng</option>
+                                <option value="Nhà xuất bản Thế Giới Mới">Nhà xuất bản Thế Giới Mới</option>
+                                <option value="Nhà xuất bản Tri thức">Nhà xuất bản Tri thức</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="" class="label">Chiết Khấu</label>
+                            <input type="text" class="form-control" id="chietkhau" disabled>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="" class="label">Thể Loại:</label>
+                            <br>
+                            <input type="checkbox" name="a" id="" class="cb1" value="Văn Học"> Văn Học 
+                            <input type="checkbox" name="a" id="" class="cb1" value="Khoa Học"> Khoa Học 
+                            <input type="checkbox" name="a" id="" class="cb1" value="Thiếu Nhi"> Thiếu Nhi
+                        </div>
+                        <div class="form-group mt-3">
+                            <button type="button" class="btn btn-primary" onclick="nhapKho()">Nhập Kho</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Optional: Place to the bottom of scripts -->
+
+    
+</body>
+</html>

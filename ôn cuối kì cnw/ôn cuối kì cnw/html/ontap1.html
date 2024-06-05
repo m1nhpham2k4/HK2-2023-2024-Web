@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/ontap1.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <header style="background-image: url(../img/z5418742836299_4697ef8c3940932635a23eafbd287303.jpg);height:280px;background-size:cover"> 
+        </header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" aria-current="page"
+                                >Trang chủ
+                                <span class="visually-hidden">(current)</span></a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tổ Chức</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="dropdownId"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">Đăng Ký Đặt Chỗ</a>
+                            <div
+                                class="dropdown-menu"
+                                aria-labelledby="dropdownId">
+                                <a class="dropdown-item" href="#" data-bs-target="#mymodal1" data-bs-toggle="modal">Action 1</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <div class="row">
+        <div class="col-9">
+            <div
+                class="table-responsive"
+            >
+                <table
+                    class="table table-striped" id="mytable1"
+                >
+                    <thead>
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col">Họ Tên</th>
+                            <th scope="col">Điện Thoại</th>
+                            <th scope="col">Ngày Nhận Tiệc</th>
+                            <th scope="col">Giờ nhận Tiệc</th>
+                            <th scope="col">Số Người</th>
+                            <th scope="col">Loại Tiệc</th>
+                            <th scope="col">Loại Phòng</th>
+                            <th scope="col">Thành Viên</th>
+                            <th scope="col">Dịch Vụ Đi Kèm</th>
+                            <th scope="col">Ghi Chú</th>
+                        </tr>
+                    </thead>
+                    <td></td>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    <div
+        class="modal fade"
+        id="mymodal1"
+        tabindex="-1"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        
+        role="dialog"
+        aria-labelledby="modalTitleId"
+        aria-hidden="true"
+    >
+        <div
+            class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
+            role="document"
+        >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="modalTitleId">
+                        Thông Tin đặt tiệc
+                    </h1>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Họ tên người đặt tiệc:</label><span id="span1" class="text-danger">*</span>
+                            <input
+                                type="text"
+                                name=""
+                                id="name"
+                                class="form-control"
+                                placeholder="Họ Tên"
+                                onblur="check_name()"
+                            />    
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Điện Thoại Liên Hệ:</label><span id="span2" class="text-danger">*</span>
+                            <input
+                                type="text"
+                                name=""
+                                id="phone"
+                                class="form-control"
+                                placeholder="Điện Thoại"
+                                onblur="check_phone()"
+                            />    
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Ngày Nhận Tiệc:</label><span id="span3" class="text-danger">*</span>
+                            <input
+                                type="date"
+                                name=""
+                                id="ngay"
+                                class="form-control"
+                                placeholder="dd/mm/yyyy"
+                                onblur="check_ngay()"
+                            />    
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Giờ Nhận Tiệc:</label><span id="span4" class="text-danger">*</span>
+                            <input
+                                type="time"
+                                name=""
+                                id="gio"
+                                class="form-control"
+                                placeholder=""
+                            />    
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Số Người:</label><span id="span5" class="text-danger">*</span>
+                            <input
+                                type="text"
+                                name=""
+                                id="songuoi"
+                                class="form-control"
+                                placeholder=""
+                                onblur="check_songuoi()"
+                            />    
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Loại Tiệc:</label><span id="span6" class="text-danger">*</span>
+                            <select name="" id="loaitiec" class="form-control">
+                                <option value="Finger Food">Finger Food</option>
+                                <option value="Set Menu">Set Menu</option>
+                                <option value="Buffet">Buffet</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Loại Phòng:</label><span id="span6" class="text-danger">*</span>
+                            <input type="radio" name="rdo1" id="radio1" value="VIP"> VIP 
+                            <input type="radio" name="rdo1" id="radio2" value="Thường"> Thường
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Dịch Vụ Đi Kèm:</label>
+                            <input type="checkbox" name="rdo2" id="cb1" value="Nhân Viên phục vụ riêng"> Nhân viên phục vụ riêng
+                            <input type="checkbox" name="rdo2" id="cb2" value="Hoa Tươi"> Hoa Tươi
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Thành Viên:</label>
+                            <input type="checkbox" name="rdo1" id="thanhvien"> Thành Viên Của Quán
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Ghi Chú:</label>
+                            <textarea class="form-control" name="" id="ghichu" placeholder="Không gian thoáng mát" rows="8"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-primary form-control" onclick="dang_ky()">Lưu</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    Hot line: 1900 6005
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Optional: Place to the bottom of scripts -->
+    <script>
+        const myModal = new bootstrap.Modal(
+            document.getElementById("modalId"),
+            options,
+        );
+    </script>
+    
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

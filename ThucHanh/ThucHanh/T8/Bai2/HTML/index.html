@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Bài 2</title>
+</head>
+<body>
+    <div class="container border border-dark  p-0">
+        <header class="col-12 border border-dark">
+            <p>TUOI TRE ONLINE</p>
+            <P>DANG KY MUA BAO ONLINE</P>
+        </header>
+        <section class="row no-gutters">
+            <div class="col-4 border border-dark">
+                <p class="border-bottom border-dark">Left</p>
+            </div>
+            <div class="col-8 border border-dark p-3" >
+                <p>Dang ky bao</p>
+                <form action="#">
+                    <div class="form-check-inline">
+                        <input type="checkbox" name="" id="id-tuoitrehangngay" value="Tuổi trẻ hàng ngày" class="form-check-input">
+                        <label for="id-tuoitrehangngay" class="form-check-label mr-3">Tuoi tre hang ngay</label >
+                        <input type="checkbox" name="" id="id-tuoitrecuoi" value="Tuổi trẻ cười" class="form-check-input">
+                        <label for="id-tuoitrecuoi" class="form-check-label  mr-3">Tuoi tre cuoi</label>
+                        <input type="checkbox" name="" id="id-tuoitrechunhat" value="Tuổi trẻ chủ nhật" class="form-check-input">
+                        <label for="id-tuoitrechunhat" class="form-check-label  mr-3">Tuoi tre chu nhat</label>
+
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="id-kyhan" class="font-weight-bold">Ky han</label>
+                        <select name="" id="id-kyhan" class="form-control">
+                            <option value="3:300000">3 tháng</option>
+                            <option value="6:500000">6 tháng</option>
+                            <option value="12:800000">1 năm</option>
+                        </select>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="id-dongia" class="font-weight-bold">Don gia</label>
+                        <input type="text" name="" id="id-dongia" value="500000" disabled class="form-control">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="id-ttll" class="font-weight-bold">Thong tin lien lac</label>
+                        <div>
+                            <input type="text" name="" id="id-ttll" placeholder="Quang Tèo" class="form-control">
+                            <span class="msg-error text-danger">(*)</span>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="id-tel" class="font-weight-bold">So dien thoai</label>
+                        <div>
+                            <input type="text" name="" id="id-tel" placeholder="0912345678" class="form-control">
+                            <span class="msg-error text-danger">(*)</span>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="id-address" class="font-weight-bold">Dia chi nhan bao</label>
+                        <div>
+                            <input type="text" name="" id="id-address" placeholder="123 Le Loi P3 GV TPHCM  " class="form-control">
+                            <span class="msg-error text-danger">(*)</span>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="id-httt" class="font-weight-bold">Hinh thuc thanh toan</label>
+                        <div class="form-inline">
+                            <input type="radio" name="radio-thanhtoan" id="radio-chuyenkhoan" checked>
+                            <label for="radio-chuyenkhoan" class="mr-3"> Chuyen khoan</label>
+                            <input type="radio" name="radio-thanhtoan" id="radio-tienmat">
+                            <label for="radio-tienmat" class="mr-3">Tien mat</label>
+                        </div>
+                    </div>
+                    <input id="btn-submit" type="button" value="Dat bao" class="border-0 p-2 rounded text-white" style="background-color: aqua;">
+                </form>
+                <div class="table-responsive">
+                    <table class="table table table-striped">
+                        <thead>
+                            <tr class="font-weight-bold">
+                                <th>STT</th>
+                                <th>Dat Bao</th>
+                                <th>Ky han</th>
+                                <th>Thong tin lien lac</th>
+                                <th>Dia chi nhan bao</th>
+                                <th>Tong thanh tien</th>
+                                <th>Hinh thuc thanh toan</th>
+                            </tr>
+                        </thead>
+                        <tbody id="innerToTable">
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../JS/jquery-3.6.0.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/app.js"></script>
+</body>
+</html>

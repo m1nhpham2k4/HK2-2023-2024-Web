@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function set_background()
+        {
+            docbody=document.getElementsByTagName("body")[0];
+            myBodyElements = docbody.getElementsByTagName("p");
+            myp1=myBodyElements[0];
+            myp1.style.background="rgb(255,0,0)";
+            myp2=myBodyElements[1];
+            myp2.style.background="rgb(255,255,0)";
+        }
+    </script>
+</head>
+<body>
+    <p id="text" onclick="set_background()">Nguyễn Đình Thanh</p>
+</body>
+</html>

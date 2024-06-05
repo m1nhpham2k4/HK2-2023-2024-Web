@@ -1,0 +1,100 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 80%;
+    height: 700px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+header
+{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(41, 78, 121);
+    display: flex;
+}
+
+.logo{
+    width: 30%;
+    height: 100px;
+    display: flex;
+}
+
+.flower{
+    color: white;
+    padding-top: 20px;
+    padding-left: 5px;
+}
+
+
+nav
+{
+    width: 70%;
+    height: 100px;
+}
+
+.search{
+    /* height: 0px; */
+    display: flex;
+    justify-content: flex-end; 
+    padding: 5px 15px 0 0cap;
+}
+
+.search1{
+    color: white;
+    background-color: rgb(30, 51, 82);
+}
+
+.search input{
+    padding: 5px;
+    padding-right: 30px;
+    margin-right: 10px;
+}
+
+.menu{
+    padding-top: 38px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu ul
+{
+    display: flex;
+}
+.menu ul li{
+    list-style: none;
+}
+.menu ul li a{
+    text-decoration: none;
+    margin-right: 30px;
+    padding: 10px 25px;
+    background-color: rgb(63, 114, 179);
+
+}
+.menu_con{
+    color: white;
+}
+.content
+{
+
+}
+
+section
+{
+
+}
+
+aside
+{
+
+}
+
+footer
+{
+
+}

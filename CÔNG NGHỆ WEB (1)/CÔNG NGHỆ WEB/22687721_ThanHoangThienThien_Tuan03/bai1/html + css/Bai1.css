@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, rgb(140, 213, 237), rgb(105, 134, 221)) no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+}
+
+header {
+    color: white;
+    border-bottom: 4px dotted white;
+    display: flex;
+    justify-content: space-between;
+}
+
+header li {
+    display: inline-block;
+    padding: 16px;
+}
+
+header h1 {
+    margin-right: 16px;
+    text-shadow: 0 0 16px darkblue;
+}
+
+.content {
+    padding: 8px;
+    color: white;
+    width: 600px;
+}
+
+.content h1 {
+    padding: 32px 0;
+}
+
+.content-input {
+    padding: 8px;
+}
+
+.content p {
+    text-align: justify;
+}
+
+.input-item {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.input-label {
+    display: inline-block;
+    width: 40%;
+    padding-left: 32px;
+}
+
+.input-box {
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 2px solid rgb(71, 125, 212);
+}
+
+.input-item input,
+.input-item textarea {
+    width: 42%;
+    border: 2px solid rgb(71, 125, 212);
+}
+
+.orther {
+    display: flex;
+    align-items: center;
+}
+
+.btns {
+    margin-left: 160px;
+}
+
+.content .btn {
+    border: 1px dashed black;
+    background-color: #c2c2c2;
+}
+
+
+/*============== right ================*/
+
+.right {
+    padding-bottom: 32px;
+    color: blue;
+    margin: 32px 0 0 32px;
+}
+
+.right img {
+    width: 80%;
+}
+
+.right h1 {
+    text-shadow: 3px 3px blue;
+}
+
+.right span {
+    padding-left: 16px;
+    font-size: 32px;
+}
+
+.right-text {
+    margin: 16px 0 0 32px;
+    font-weight: bold;
+}
+
+.right-text span {
+    font-size: 28px;
+    padding-left: 18px;
+}
+
+footer {
+    position: absolute;
+    padding: 16px;
+    line-height: 24px;
+    bottom: 0;
+    width: 100%;
+    border-top: 4px dotted white;
+    color: white;
+    text-align: center;
+}

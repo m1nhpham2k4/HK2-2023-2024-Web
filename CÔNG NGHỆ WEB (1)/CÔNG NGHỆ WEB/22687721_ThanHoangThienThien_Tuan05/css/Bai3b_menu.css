@@ -1,0 +1,44 @@
+
+header {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ h1 {
+    font-family: 'Magneto', sans-serif;
+}
+section {
+    height: 90%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+table a {
+    color: inherit; /* Sử dụng màu chữ kế thừa từ phần tử cha */
+    text-decoration: none; /* Loại bỏ gạch chân */
+}
+
+.box_img {
+    height: 60%;
+    width: 100%;
+}
+
+.box_text {
+    height: 40%;
+    width: 100%;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #000000 !important; /* Màu nền của tab được chọn */
+    color: #fff !important; /* Màu chữ của tab được chọn */
+ }
+
+.nav-pills .nav-link {
+    background-color: #fff !important; /* Màu nền mặc định của các tab */
+    color: #000 !important; /* Màu chữ mặc định của các tab */
+}

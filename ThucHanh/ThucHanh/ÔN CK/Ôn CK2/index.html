@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="../../jquery-3.6.0.js"></script>
+    <script src="../../bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <img src="anhheader.png" alt="" class="img-fluid w-100">
+        </div>
+        <div class="col-md-12 " style="background-color: #DEF0D8">
+            <nav class="navbar navbar-expand">
+                <ul class="navbar-nav nav">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Tổ chức</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Đăng kí đặt chỗ</a>
+                        <div class="dropdown-menu">
+                            <a href="" id="myBtn" data-toggle="modal" data-target="#myModal" class="dropdown-item">Form đặt chỗ</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-12 mt-3">
+            <div class="row">
+                <div class="col-md-9 ">
+                    <section class="table-reponsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Họ Tên</th>
+                                    <th>Điện Thoại</th>
+                                    <th>Ngày Nhận Tiệc</th>
+                                    <th>Giờ Nhận Tiệc</th>
+                                    <th>Số người</th>
+                                    <th>Loại Tiệc</th>
+                                    <th>Loại Phòng</th>
+                                    <th>Thành Viên</th>
+                                    <th>Dịch vụ đi kèm</th>
+                                    <th>Ghi Chú</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+                <div class="col-md-3" style="background-color: #DEF0D8">
+                    <div class="col-md-12">
+                        <h4 class="text-danger mt-3">Đặt chỗ</h4>
+                        <div class="col-md-12">
+                            <section class="table-reponsive">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th class="text-danger border border-dark">Nhóm gia đình</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-danger border border-dark">Tiệc sinh nhật</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-danger border border-dark">Nhóm văn phòng </th>
+                                    </tr>
+                                </table>
+                            </section>
+                        </div>
+                        <h4 class="text-danger mt-3">Contact</h4>
+                        <p class="text-primary">
+                            Gọi tới: <mark>1900 6005</mark> - Để đặt chỗ và được tư vấn.
+                        </p>
+                        <p class="text-primary">
+                            Địa chỉ: 13 Trần Bình Trọng, Quận 1, TPHCM
+                        </p>
+                        <h4 class="text-danger mt-3">Bài viết nổi bật</h4>
+                        <ol type="1">
+                            <li><a href="">Kinh nghiệm tổ chức sinh nhật cho bé</a></li>
+                            <li><a href="">Đặt sản các miền</a></li>
+                            <li><a href="">Văn hóa ẩm thực Sài Gòn</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foorter col-md-12 text-danger " style="background-color: #DEF0D8" >
+            &copy; Copyright: Food Circle
+        </div>
+    </div>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>
+                        Thông tin đặt tiệc
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="txtht" class="font-weight-bold control-label col-md-auto">Họ tên người đặt tiệc:</label>
+                            <span class="text-danger control-label" id="tbht">*</span>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="txtht" placeholder="Họ Tên" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtsdt" class="font-weight-bold control-label col-md-auto">Điện thoại liên hệ:</label>
+                            <span class="text-danger" id="tbsdt">*</span>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="txtsdt" placeholder="Điện thoại" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtngay" class="font-weight-bold control-label col-md-auto">Ngày nhận tiệc:</label>
+                            <span class="text-danger" id="tbngay">*</span>
+                            <div class="col-md-12">
+                                <input type="date" class="form-control" id="txtngay" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtgio" class="font-weight-bold control-label col-md-auto">Giờ nhận tiệc:</label>
+                            <span class="text-danger" id="tbgio">*</span>
+                            <div class="col-md-12">
+                                <input type="time" class="form-control" id="txtgio" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtsoluong" class="font-weight-bold control-label col-md-auto">Số người:</label>
+                            <span class="text-danger" id="tbsoluong">*</span>
+                            <div class="col-md-12">
+                                <input type="number" class="form-control" id="txtsoluong" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtloaiTiec" class="font-weight-bold control-label col-md-auto">Loại tiệc:</label>
+                            <span class="text-danger" id="tbloaiTiec">*</span>
+                            <div class="col-md-12">
+                                <select name="loaitiec" id="loaitiec" class="form-control">
+                                    <option value="Set Menu">Set Menu</option>
+                                    <option value="Buffer">Buffet</option>
+                                    <option value="Finger Food">Finger Food</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtloaiPhong" class="font-weight-bold control-label col-md-auto">Loại Phòng:</label>
+                            <span class="text-danger" id="tbloaiPhong">*</span>
+                            <div class="col-md-12">
+                                <input type="radio" name="loaiphong" id="" value="VIP">VIP
+                                <input type="radio" name="loaiphong" id="" value="Thường">Thường
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtdichvu" class="font-weight-bold control-label col-md-auto">Dịch vụ đi kèm:</label>
+                            <input type="checkbox" name="dichvu" id="" value="Nhân viên phục vụ riêng" checked>Nhân viên phục vụ riêng
+                            <input type="checkbox" name="dichvu" id="" value="Hoa tươi" checked>Hoa tươi
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtthanhvien" class="font-weight-bold control-label col-md-auto">Thành viên:</label>
+                            <input type="checkbox" name="thanhvien" id="" value="Yes"><label class="text-primary font-italic">nếu bạn là thành viên của quán</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtthanhvien" class="font-weight-bold control-label col-md-auto">Ghi chú:</label>
+                            <div class="col-md-12">
+                                <textarea name="" id="ghichu" cols="10" rows="5" class="form-control" value="Không gian thoáng mát" placeholder="Không gian thoáng mát"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <button type="button" id="btnSave" class="btn btn-success btn-block form-control">Lưu</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <h4 class="text-danger">
+                        Hot line: 1900 6005
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

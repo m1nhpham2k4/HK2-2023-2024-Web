@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#">
+      <h1><b>Travel reservation form</b></h1>
+      <p><b>* denotes mandotory</b></p>
+      <br />
+      <label for="#">Full name*: </label>
+      <br />
+      <input
+        type="text"
+        name="fname"
+        id="txtfname"
+        required
+        placeholder="FirstName LastName"
+      />
+      <br />
+      <label for="#">Email address*:</label>
+      <br />
+      <input
+        type="email"
+        name="email"
+        id="txtEmail"
+        required
+        placeholder="EMAIL_ADDRESS"
+      />
+      <br />
+      <label for="#">Select Tour Package*: </label>
+      <br />
+      <select name="tour" id="choseTour">
+        <option value="vietnam" selected>VietName</option>
+        <option value="My">My</option>
+        <option value="Anh">Anh</option>
+      </select>
+      <br />
+      <label for="#">Arrival date*:</label>
+      <br />
+      <input type="date" name="arrival" id="chosearrival" placeholder="m/d/y" />
+      <br />
+      <label for="#">Number of persons*:</label>
+      <br />
+      <input
+        type="text"
+        name="Number"
+        id="Number"
+        required
+        placeholder="UNKNOWN_TYPE"
+      />
+      <br />
+      <label for="#">What would you want to avail?*</label><br />
+      Boarding <input type="checkbox" />
+      <br />
+      Fooding <input type="checkbox" />
+      <br />
+      Sight seeing <input type="checkbox" />
+      <br />
+      <label for="#">Discout Coupon code:</label>
+      <br />
+      <input
+        type="text"
+        name="code"
+        id="code"
+        required
+        placeholder="UNKNOWN_TYPE"
+      />
+      <br />
+      <label for="#">Terms and conditons*</label> <br>
+      <input type="radio" name="choseterms" id="choseterms"> I agree
+      <input type="radio" name="choseterms" id="choseterms"> I disagree
+      <br>
+      <input type="button" value="Complete reservation">
+    </form>
+  </body>
+</html>

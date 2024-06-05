@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <script src="../../jquery-3.6.0.js"></script>
+    <script src="../../bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand navbar-collapse">
+                <ul class="navbar-nav nav flex-column">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-dark" id="tuoitre">TUỔI TRẺ ONLINE</a>
+                    </li>
+                    <li class="nav-item" id="menuDatbao">
+                        <a href="#" class="nav-link text-dark" id="myBtn" data-target="#myModal" data-toggle="modal">ĐĂNG KÍ MUA BÁO ONLINE</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="text-right">left</h3>
+                </div>
+                <div class="col-md-9">
+                    <section class="table-responsive">
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr clas>
+                                    <th>STT</th>
+                                    <th>Đặt báo</th>
+                                    <th>Kỳ hạn</th>
+                                    <th>Thông tin liên lạc</th>
+                                    <th>Địa chỉ nhận báo</th>
+                                    <th>Tổng thành tiền</th>
+                                    <th>Hình thức thanh toán</th>
+                                </tr>
+                            </thead>
+                            <tbody id="them"></tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Đăng kí báo</h3>
+                    <button class="close" data-dismiss="modal" type="button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <div id="thongbao" class="text-danger" style="text-align: center;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-lable" for="">Đăng kí đặt báo</label> 
+                            <br>
+                            <div id="dk">
+                                <input type="checkbox" id="tthn" name="dkdb" value="Tuổi trẻ hằng ngày"> 
+                                <label class="control-lable"  for="">Tuổi trẻ hằng ngày</label>
+    
+                                <input name="dkdb" value="Tuổi trẻ cười" type="checkbox" id="ttc"> 
+                                <label class="control-lable" for="">Tuổi trẻ cười</label>
+    
+                                <input name="dkdb" value="Tuổi trẻ chủ nhật"type="checkbox" id="ttcn"> <label class="control-lable"  for="">Tuổi trẻ chủ nhật</label>
+                            </div>
+
+                            <div class="col-md-9">
+                                <span id="tbdk" class="text-danger">*</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Kỳ hạn</label> <br>
+                            <div class="col-md-9">
+                                <select class="form-control" id="txtkihan" class="col-md-12">
+                                    <option value="3thang" selected>3 tháng</option>
+                                    <option value="6thang">6 tháng</option>
+                                    <option value="12thang">12 tháng</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Đơn giá</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" id="txtDongia" value=300000 readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <lable class="control-lable">
+                                Thông tin liên lạc
+                            </lable>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" id="txtthongtin">
+                                <span id="tbttll" class="text-danger">*</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <lable class="control-lable">
+                                Số điện thoại
+                            </lable>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" id="txtsodt">
+                                <span id="tbsdt" class="text-danger">*</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <lable class="control-lable">
+                                Địa chỉ nhận báo
+                            </lable>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" id="txtdcnb">
+                                <span id="tbdcnb" class="text-danger">*</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <lable class="control-lable">
+                                Hình thức thanh toán
+                            </lable>
+                            <div class="col-md-9">
+                                <input type="radio" name="tt" id="txtchuyenhoan" value="Chuyển Khoản">Chuyển Khoản
+                                <input type="radio" name="tt" id="txttienmat" value="Tiền Mặt">Tiền Mặt
+                                <br>
+                                <span id="tbtt" class="text-danger">*</span>
+                            </div>
+                        </div>
+                        <button type="button" id="btnSave" class="btn btn-success btn-primary">Đặt báo</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+.header
+{
+    width: 100%;
+    background-color: #AC4B16;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    color: #807d00;
+    font-weight: bold;
+    text-shadow: -5px -5px 5px white;
+    padding-left: 80px;
+}
+.menu
+{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 5px solid gray;
+}
+
+.menu ul
+{
+    list-style-type: none;
+}
+.menu li
+{
+    text-align: center;
+    width: 7%;
+    display: inline-block;
+    /* border: 1px solid red; */
+    margin-left: -5px;
+}
+
+.menu a
+{
+    text-decoration: none;
+    color: #AC4B16;
+    /* font-weight: bold; */
+}
+
+.menu a:hover
+{
+    color: black;
+}
+
+.banner
+{
+    width: 100%;
+    height: 220px;
+    /* border: 1px solid red; */
+}
+
+.form
+{
+    width: 69%;
+    height: 500px;
+    border-right: 1px solid gray;
+    float: left;
+}
+.right
+{
+    width: 30%;
+    height: 500px;
+    /* border: 1px solid red; */
+    float: left;
+    margin-top: 30px;
+    /* padding-left: 10px; */
+}
+
+.form p
+{
+    /* border: 1px solid red; */
+    font-weight:initial;
+    color: #AC4B16;
+    font-size: 30px;
+    width: 80%;
+}
+
+.form h2
+{
+    color: #AC4B16;
+    font-size: 46px;
+    margin-left: 10px;
+}
+.vanban
+{
+    margin-left: 40px;
+}
+
+.links
+{
+    margin-left: 105px;
+    background-color: pink;
+    width: 200px;
+    border-radius: 30px 30px 0 0 ;
+    border: 1px solid red;
+}
+
+.links ul
+{
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.anh-nen
+{
+    /* border-radius: 5px; */
+    margin:20px;
+    box-shadow: -10px -10px wheat, 10px 10px wheat, 10px -10px wheat, -10px 10px wheat ;
+    /* border: 1px solid red; */
+}
+.moreinfo
+{
+    margin-left: 105px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.anh
+{
+    margin-left: 30px;
+
+}

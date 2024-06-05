@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bai17.css">
+</head>
+<body>
+    <header id="header">
+        <h1 class="header__brand-name">facebook</h1>
+        <form action="#" class="login-form">
+            <div class="login-form__account">
+                <label for="input-login-account">Email hoặc điện thoại</label>
+                <input type="email" name="" id="input-login-account">
+                <div>
+                    <input type="checkbox" name="" id="input-checkbox">
+                    <label for="input-checkbox">Duy trì đăng nhập</label>
+                </div>
+            </div>
+            <div class="login-form__password">
+                <label for="input-login-password">Mật khẩu</label>
+                <input type="password" name="" id="input-login-password">
+                <a href="#">Quên mật khẩu?</a>
+            </div>
+            <input type="submit" value="Đăng nhập" id="submit-login">
+        </form>
+    </header>
+    <div id="body" style="background-color: #E6E6FA;">
+        <div class="row">
+            <div class="col-xls-5 body-left">
+                <img class="body__image" src="loicamon.png" alt="anh logo facebook">
+                <h1>Cảm ơn bạn đã ghé thăm!</h1>
+                <p>Chúng tôi mong sớm gặp lại bạn</p>
+            </div>
+            <div class="col-xls-5 body-right">
+                <form action="#" id="form-register">
+                    <h1>Đăng ký</h1>
+                    <p>Miễn phí và sẽ luôn như vậy</p>
+                    <div>
+                        <div class="row">
+                            <div class="col-xls-6">
+                                <input type="text" name="" class="input__register" id="input__register__lastname" placeholder="Họ">
+                                <span class="err-msg"></span>  
+                                </div>
+                            <div class="col-xls-6">
+                                <input type="text" name="" class="input__register" id="input__register__firstname" placeholder="Tên">
+                                <span class="err-msg"></span>
+                            </div>
+                            <div class="col-xls-12">
+                                <input type="email" name="" class="input__register" id="input__register__email"
+                                placeholder="Email đăng nhập">
+                                <span class="err-msg"></span>
+                            </div>
+                            <div class="col-xls-12">
+                                <input type="email" name="" class="input__register" id="input__register__repeat-email"
+                                placeholder="Nhập lại Email">
+                                <span class="err-msg"></span>
+                            </div>
+                            <div class="col-xls-12">
+                                <input type="password" name="" class="input__register" id="input__register__pass"
+                                placeholder="Mật khẩu">
+                                <span class="err-msg"></span>
+                            </div>
+                            <div class="col-xls-12">
+                                <input type="text" name="", class="input__register" id="input__register_birth" placeholder="Năm sinh">
+                                <span class="err-msg"></span>
+                            </div>
+                            <input type="submit" value="Đăng kí" id="input-register-submit">
+                        </div>
+                       
+                       
+                    </div>
+                </form>
+            </div>
+            <div class="col-xls-2"></div>
+        </div>
+    </div>
+    <script src="Bai17.js"></script>
+</body>
+</html>

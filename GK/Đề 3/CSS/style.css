@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 80%;
+    height: 800px;
+    border: 1px solid #aaa;
+    margin: auto;
+}
+.link{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(3, 179, 194);
+    display: flex;
+}
+header{
+    width: 100%;
+    height: 100px;
+    /* background-image: url(https://th.bing.com/th?id=OIP.nuNG3POr1Sd5Yz-EK4V2MQHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2); */
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.logo
+{
+    width: 50%;
+}
+.menu{
+    width: 50%;
+}
+.menu ul{
+    display: flex;
+    justify-content: flex-end;
+}
+.menu_con{
+    padding-top:  30px;
+    padding-right: 25px;
+    list-style: none;
+}
+.menu_con a{
+    text-decoration: none;
+}
+.menu_con1{
+    
+}

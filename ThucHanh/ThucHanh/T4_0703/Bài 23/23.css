@@ -1,0 +1,95 @@
+*{
+    padding: 0px;
+}
+body
+{
+    background-color: darkgrey;
+}
+.title-1
+{
+    margin-top: 0;
+    text-align: center;
+    color: brown;
+}
+.title-2
+{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    padding-top: 20px;
+}
+
+.title-3
+{
+    text-align: center;
+    color: brown;
+    font-size: 30px;
+}
+
+.nav ul
+{
+    list-style-type: none;
+    margin: auto;
+    text-align: center;
+    background-color:brown;
+    width: 80%;
+}
+.nav a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+}
+
+
+.nav li
+{
+    display: inline-block;
+    width: 16%;
+    /* height: 40px; */
+    /* line-height: 40px; */
+    /* border: 1px solid white; */
+    margin-left: -5px;
+}
+
+.nav a:hover
+{
+    color: black;
+}
+.noidung
+{
+    background-color:dimgray;
+}
+
+.chia a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+}
+
+.chia ul
+{
+    list-style-type: none;
+    text-align: center;
+    /* background-color:brown; */
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.chia li
+{
+    display: inline-block;
+    /* border: 1px solid black; */
+    width: 150px;
+    margin: 0 30px 20px 0;
+}
+
+.chia a:hover
+{
+    color: brown;
+}

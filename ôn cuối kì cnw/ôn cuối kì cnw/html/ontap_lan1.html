@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jQuery.js"></script>
+    <script src="../js/ontap_lan1.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header style="background-image: url(../img/website.png);height:300px;background-size:cover;">
+
+        </header>
+        <nav class="navbar navbar-expand-sm bg-light">
+            <div class="container">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Trang Chủ
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            Đăng Ký
+                        </a>
+                        <div class="dropdown-menu" >
+                            <a href="" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#mymodal1">Đăng Ký 1</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center;">LIST OF MEMBER</h1>
+                <table class="table" id="mytable1">
+                    <tr>
+                        <td>STT</td>
+                        <td>Họ Và Tên</td>
+                        <td>Ảnh Đại Diện</td>
+                        <td>Số Điện Thoại</td>
+                        <td>Ngày Sinh</td>
+                        <td>Địa Chỉ</td>
+                        <td>Khóa Học</td>
+                        <td>Học Phí</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="mymodal1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Thông Tin Học Viên</h1>
+                    <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form">
+                        <div class="form-group">
+                            <label for="" class="label">Họ Và Tên:</label>
+                            <input type="text" name="" id="name" class="form-control" onblur="kiemTraTen()">
+                            <span class="text-danger" id="span1">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="label">Số Điện Thoại:</label>
+                            <input type="tel" name="" id="sdt" class="form-control" onblur="kiemTraSDT()">
+                            <span class="text-danger" id="span2">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="label">Ngày Sinh:</label>
+                            <input type="date" name="" id="ngaysinh" class="form-control" onblur="kiemTraNgaySinh()">
+                            <span class="text-danger" id="span3">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="label">Địa Chỉ:</label>
+                            <input type="text" name="" id="diachi" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="" class="label">Bạn Muốn tham gia khóa nào?:</label>
+                            <select name="khoahoc" id="khoahoc" class="form-control" onblur="thaoTacKhoaHoc()">
+                                <option value="2 tuần">2 tuần</option>
+                                <option value="4 tuần">4 tuần</option>
+                                <option value="6 tuần">6 tuần</option>
+                            </select>
+                            <span class="text-danger" id="span4">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="label">Học Phí</label>
+                            <input type="text" name="" id="hocphi" class="form-control" disabled>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="" class="label">Ảnh Đại Diện:</label>
+                            <input type="file" name="" id="anhdaidien" class="form-control" onblur="checkAnh()">
+                            <span class="text-danger" id="span5">*</span>
+                        </div>
+                        <div class="form-group mt-3">
+                            <button type="button" class="btn btn-success form-control" onclick="luuThongTin()">Lưu</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

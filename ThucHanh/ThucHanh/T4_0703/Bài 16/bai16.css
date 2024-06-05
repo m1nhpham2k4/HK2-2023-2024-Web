@@ -1,0 +1,31 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    font-family: sans-serif;
+    color: black;
+}
+.header a
+{
+    color: white;
+    text-decoration: none;
+}
+.header li
+{
+    text-align: center;
+    width: 100px;
+    padding: 5px;
+    margin: 12px;
+    background: blue;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.3em;
+    border: 2px dashed white;
+    border-radius: 10px;
+    box-shadow: 0 0 0 4px blue, 2px 1px 6px 4px black;
+    text-shadow: -1px -1px #aa3030 ;
+    font-weight: normal;
+}

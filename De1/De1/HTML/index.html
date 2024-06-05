@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="../JS/jQuery.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 style="position: absolute;padding: 100px 0 0 300px; font-size: 50px; color: white;">TRẢI NGHIỆM BỮA ĂN SẠCH</h1>    
+            <p style="position: absolute; padding: 150px 0 0 400px; font-size: 30px; color: white;">TƯƠI NGON GIÀU DINH DƯỠNG</p>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="position: absolute; margin: 200px 0 0 525px; font-size: 25px;">
+                Đặt ngay
+            </button>
+            <img class="img-fluid w-100" src="../IMG/Banner.png"></img>
+        </header>
+            <h1 class="text-center mt-3">DANH SÁCH KHÁCH HÀNG</h1>
+            <table class="table talber-bordered" id="table1">
+                <thead>
+                    <tr>
+                        <th>Số TT</th>
+                        <th>Họ tên KH</th>
+                        <th>Địa chỉ</th>
+                        <th>Thời gian giao hàng</th>
+                        <th>Email</th>
+                        <th>Điện thoại</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Phạm Viết Dũng Minh</td>
+                        <td>12-Nguyễn Văn Bảo</td>
+                        <td>07:00 đến 08:00</td>
+                        <td>minh02122004@gmail.com</td>
+                        <td>0825367276</td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">THÔNG TIN ĐẶT HÀNG</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+                <form action="" class="form">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <label for="" class="form-label">Ho ten</label>
+                                <input type="text" placeholder="Nhập họ tên" class="form-control" id="txtHT">
+                                <span id="errHT">(*)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="" class="form-label">Địa chỉ</label>
+                                <input type="text" placeholder="Nhập địa chỉ" class="form-control" id="txtDC">
+                                <span id="errDC"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="" class="form-label">Thời gian giao hàng</label>
+                                <select type="text" class="form-control" id="txtTG"> 
+                                    <option value=""></option>
+                                    <option value="07:00 đến 08:30">07:00 đến 08:30</option>
+                                    <option value="09:00 đến 12:30">09:00 đến 12:30</option>
+                                    <option value="13:00 đến 14:30">13:00 đến 14:30</option>
+                                </select>
+                                <span id="errTG"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="" class="form-label">Email</label>
+                                <input type="text" placeholder="Nhập địa chỉ email" class="form-control" id="txtEm">
+                                <span id="errEm"></span>                               
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="" class="form-label">Số điện thoại</label>
+                                <input type="text" placeholder="Nhập số điện thoại" class="form-control" id="txtSDT">
+                                <span id="errSDT"></span>                               
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
+            <button type="button" class="btn btn-primary" id="Dat">Đặt hàng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JQUERY -->
+    <script>
+        $(function(){
+            $("#staticBackdrop").on("shown.bs.modal", function(){
+                $("#txtHT").focus();
+            })
+
+            var hoten;
+            $("#txtHT").blur(function(){
+                var ten = document.getElementById("txtHT").value;
+                if(ten == null || ten == ""){
+                    errHT.innerHTML = "Họ tên khách hàng không được rỗng";
+                    hoten = 0;
+                }
+                else{
+                    var kq = /^([A-Z][a-z]*\s){1,}[A-Z][a-z]*$/;
+                    if(kq.test(ten) == true){
+                        errHT.innerHTML = "Hợp lệ";
+                        hoten = 1;
+                    }
+                        
+                    else{
+                        errHT.innerHTML = "Họ tên không hợp lệ";
+                        hoten = 0;
+                    }
+                }
+            })
+            var diachi = 0;
+            $("#txtDC").blur(function(){
+                var dc = document.getElementById("txtDC").value;
+                var reg = /^[A-Z]*$/
+                if(dc == null || dc == ""){
+                    errDC.innerHTML = "Địa chỉ không được rỗng";
+                    diachi = 0;
+                }
+                else
+                {
+                    if(reg.test(dc)){
+                        errDC.innerHTML = "Thỏa mãn";
+                        diachi = 1;
+                    }
+                        
+                    else{
+                        errDC.innerHTML = "Địa chỉ không thỏa";
+                        diachi = 0;
+                    }
+                        
+                }
+            })
+            var thoigian
+            $("#txtTG").change(function(){
+                var tg = document.getElementById("txtTG").value;
+                if(tg == "" || tg == null)
+                {
+                    thoigian = 0;
+                    errTG.innerHTML = "TG không được rỗng";
+                }
+                else{
+                    var reg = /^[0-9][0-9]:[0-9][0-9]\sđến\s[0-9][0-9]:[0-9][0-9]$/;
+                    if(reg.test(tg))
+                    {
+                        errTG.innerHTML = "Hợp lệ"
+                        thoigian = 1;
+                    }
+                    else{
+                        errTG.innerHTML = "Không hợp lệ"
+                        thoigian = 0;
+                    }
+                }
+            })
+            var email = 0;
+            $("#txtEm").blur(function(){
+                var em = document.getElementById("txtEm").value;
+                if(em == null || em == ""){
+                    errEm.innerHTML = "Email không được rỗng";
+                    email = 0;
+                }
+                else{
+                    var reg = /^0{1}\d{4}@iuh.edu.vn$/
+                    if(reg.test(em)){
+                         errEm.innerHTML = "Hợp lệ";
+                         email = 1;
+                    }
+                       
+                    else{
+                        errEm.innerHTML = "Định dạng không hợp lệ";
+                        email = 0;
+                    }
+                    
+                }
+            })
+            var isdt = 0;
+            $("#txtSDT").blur(function(){
+                var sdt = document.getElementById("txtSDT").value;
+                if(sdt == null || sdt == ""){
+                    errSDT.innerHTML = "Số điện thoại khong được rỗng";
+                    isdt = 0;
+                }
+                else{
+                    var reg = /^0(\d{3}-){2}\d{3}$/
+                    if(reg.test(sdt)){
+                        errSDT.innerHTML = "Hợp lệ";
+                        isdt = 1;
+                    }
+                    else{
+                        errSDT.innerHTML = "Định dạng không hợp lệ";
+                        isdt = 0;
+                    }
+                }
+            })
+            var dem = 2
+
+            $("#Dat").click(function(){
+                var ht = $("#txtHT").val();
+                var dc = $("#txtDC").val();
+                var tg = $("#txtTG").val();
+                var em = $("#txtEm").val();
+                var sdt = $("#txtSDT").val();
+                
+                // Kiểm tra điều kiện nhập
+                if(hoten == 1 && email == 1 && diachi == 1 && isdt == 1){
+                    // Nếu thông tin nhập hợp lệ, thêm vào bảng
+                    var row = `<tr>
+                                <td>${dem++}</td>
+                                <td>${ht}</td>
+                                <td>${dc}</td>
+                                <td>${tg}</td>
+                                <td>${em}</td>
+                                <td>${sdt}</td>
+                            </tr>`;
+                    $("#table1").append(row);
+                }
+                else
+                    alert("Không hợp lệ")
+            });
+        })
+    </script>
+</body>
+
+</html>

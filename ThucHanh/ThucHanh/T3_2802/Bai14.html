@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .transition{
+            width: 300px;
+            height: 170px;
+            background-color: #6fac21;
+            opacity: 0.8;
+            border-radius: 10px;
+            transition: all 2s linear;
+            margin: 50px;
+            text-align: justify;
+            border-bottom: dashed;
+            border-left: double;
+            border-right: dashed;
+            border-top: double;
+            border-color: red;
+        }
+        #transition{
+            color: white;
+            font-size: 15px;
+            text-align: justify;
+            line-height: 16px;
+            transition: all 2s;
+            margin: auto;
+        }
+        .transition:hover{
+            transform: scale(2) rotate(360deg);
+            -webkit-transform: scale(2) rotate(360deg);
+            -o-transform: scale(2) rotate(360deg);
+            -ms-transform: scale(2) rotate(360deg);
+            background-color: #1ec7e6;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div id="transition" class="transition">
+        <p style="text-align: justify;">Casading Style Sheets (CSS) is a style sheet languege used for describing the look and formatting of a document written in a markup languague. Although most often used to change the style of web pages and user interfaces written in HTML and XHTML the language can be applied to any kind of XML document, including plain XML, SVG and XUL.</p>
+    </div>
+</body>
+</html>

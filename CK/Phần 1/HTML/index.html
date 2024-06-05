@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <script src="../JS/js/jQuery.js"></script>
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <style>
+        .container{
+            width: 90%;
+            margin: auto;
+            border: 1px solid #000;
+        }
+    </style>
+    <title>Bài 2</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="../image/banner-5.png" alt="" class="img-fluid w-100">
+        </header>
+        <!-- Button trigger modal -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="nav-link" href="#" style="color: dodgerblue; font-size: 20px;">Đăng ký</a>
+                <a class="nav-link" href="#" style="color: dodgerblue;margin-left: 50px; font-size: 20px;"data-bs-toggle="modal" data-bs-target="#staticBackdrop" >Mở tour</a>
+        </nav>
+        <hr>
+        <h5 class="text-center">DANH SÁCH TOUR - DU LỊCH VIỆT</h5>
+        <table class="table table-striped" id="table1">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã Tour</th>
+                    <th>Hành trình</th>
+                    <th>Ngày khởi hành</th>
+                    <th>Thời gian</th>
+                    <th>Giá tour</th>
+                    <th>Ảnh đại diện</th>
+                </tr>
+            </thead>
+        </table>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Thông tin tour</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="" class="form">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <label for="">Mã tour</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" id="txtMT">
+                                <span id="errMT" style="color: red;">(*)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Hành trình</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" id="txtHT" placeholder="Hà Nội - Huế - Đà Nẵng 5 ngày 4 đêm">
+                                <span id="errHT" style="color: red;">(*)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Ngày khởi hành</label>
+                            </td>
+                            <td>
+                                <input type="date" id="txtKH" class="form-control">
+                                <span id="errKH" style="color: red;">(*)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Thời gian</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" id="txtTG" value="5 ngày 4 đêm">
+                                <span id="errTG" style="color: red;"></span>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Giá tour</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" id="txtGT" placeholder="10500000">
+                                <span id="errGT" style="color: red;">(*)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Ảnh đại diện</label>
+                            </td>
+                            <td>
+                                <input type="file" id="txtDD" class="form-control">
+                                <span id="errDD" style="color: red;">(*)</span>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success w-100" data-bs-dismiss="modal" id="Luu">Lưu</button>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- JQUERY -->
+    <script>
+        $(function(){
+            $("#staticBackdrop").on("shown.bs.modal", function(){
+                $("#txtMT").focus()
+            });
+
+            $("#txtMT").blur(function(){
+                var ma = document.getElementById("txtMT").value;
+                var reg = /^([A-Z]{3}[-]{1}){2}([0]{1}[1-9]{1}|[1]{1}[0-2]{2})[-]{1}[0-9]{4}$/
+                if(ma == "" || ma == null){
+                    errMT.innerHTML = "Không được để trống mã tour";
+                }
+                else{
+                    if(reg.test(ma) == true){
+                        errMT.innerHTML = "Hợp lệ"
+                    }
+                    else{
+                        errMT.innerHTML = "Không hợp lệ"
+                    }
+                }
+            });
+            $('#txtKH').change(function(){
+                var nht = new Date();
+                var nkh = new Date(this.value);
+                nht.setDate(nht.getDate() + 30);
+                if(nkh > nht)
+                    errKH.innerHTML = "Thời gian hợp lệ";
+                else
+                    errKH.innerHTML = "Thời gian khởi hành phải lớn hơn ngày hiện tại 30 ngày";
+            });
+            $("#txtGT").blur(function(){
+                var gia = parseInt(document.getElementById("txtGT").value)
+                if(gia > 0)
+                    errGT.innerHTML = "Giá hợp lệ"
+                else
+                    errGT.innerHTML = "Giá phải lớn hơn 0"
+            })
+            $("#txtDD").blur(function(){
+                var fileInput = document.getElementById('txtDD');
+                var filePath = fileInput.value;
+                var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+                if (!allowedExtensions.exec(filePath)) {
+                    errDD.innerHTML = 'Định dạng không hợp lệ. Chỉ chấp nhận các định dạng: .jpg, .jpeg, .png, .gif';
+                } else {
+                    errDD.innerHTML = 'Hợp lệ';
+                }
+            });
+
+            var dem = 1;
+
+            $("#Luu").click(function(){
+                var mt = $("#txtMT").val();
+                var ht = $("#txtHT").val();
+                var gt = $("#txtGT").val();
+                var dd = $("#txtDD").val();
+                var tg = $("#txtTG").val();
+                var kh = $("#txtKH").val();
+            
+                if (mt && ht && gt && dd && tg && kh) {
+                    var row = `<tr>
+                            <td>${dem++}</td>
+                            <td>${mt}</td>
+                            <td>${ht}</td>
+                            <td>${kh}</td>
+                            <td>${tg}</td>
+                            <td>${gt}</td>
+                            <td>${dd}</td>
+                        </tr>`;
+                    $("#table1").append(row);
+                } else {
+                    alert("Vui lòng điền đầy đủ và chính xác thông tin!");
+                }
+            })
+        });
+    </script>
+</body>
+</html>

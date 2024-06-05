@@ -1,0 +1,148 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    background-color: #6cc6ee;
+}
+
+.header
+{
+    width: 100%;
+    border-bottom: 3px dashed white;
+    line-height: 40px;
+    color: white;
+}
+
+.form
+{
+    width: 50%;
+    height: 500px;
+    border-bottom: 3px dashed white;
+    display: block;
+    float: left;
+}
+.right
+{
+    width: 50%;
+    height: 500px;
+    border-bottom: 3px dashed white;
+    display: block;
+    float: left;
+}
+
+.menu ul
+{
+    list-style-type: none;
+}
+
+.menu li
+{
+    display: inline-block;
+    /* border: 1px solid black; */
+    margin-left: -5px;
+    width: 8%;
+    text-align: center;
+}
+.menu a
+{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    color: white;
+}
+.menu a:hover
+{
+    color: black;
+}
+
+.menu-con
+{
+    display: none;
+    position: absolute;
+    width: 180px;
+}
+
+.menu-con li
+{
+    position: relative;
+}
+
+.menu>ul>li:hover .menu-con
+{
+    display: block;
+}
+
+.menu-con>li
+{
+    margin-left: 0!important;
+    width: 100%;
+    /* border: 1px solid black; */
+    text-align: left;
+    margin-left: 23px !important;
+}
+
+.title
+{
+    /* border: 1px solid black; */
+    font-size: 30px;
+    font-weight: bold;
+    width: 58% !important;
+    text-align: right !important;
+    text-shadow: 0px -2px 10px blue,0px 2px 10px blue;
+}
+
+.info-1
+{
+    /* border: 1px solid black; */
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    color: white;
+}
+.info-2
+{
+    margin-left: 10px;
+    color: white;
+}
+.bangcauhoi 
+{
+    margin-left: 60px;
+    color: white;
+}
+.bangcauhoi td
+{
+    width: 120px;
+}
+
+.img
+{
+    margin: 30px 30px 20px 30px;
+}
+.title-2
+{
+    font-size: 30px;
+    margin-left: 100px;
+    color: blue;
+    text-shadow: 2px 2px 0px blue;
+    font-weight: bold;
+}
+.chu
+{
+    margin-left: 120px;
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+}
+
+.footer
+{
+    float: left;
+    width: 100%;
+    height: 40%;
+    /* top: 100px; */
+    text-align: center;
+    color: white;
+    /* border: 1px solid red; */
+    margin: 20px;
+}

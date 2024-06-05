@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <h1>Contact Us</h1>
+        <p>Use the following form to send a message to Example Cafe</p>
+        <table>
+            <tr>
+                <td><label for="txtEmail">Your email</label>
+                <td><input type="email" name="txtEmail" id="txtEmail"></td></td>
+            </tr>
+            <tr>
+                <td>Message</td>
+                <td><textarea name="mess" id="message" cols="30" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td>How did you hear of us?</td>
+                <td>
+                    <select name="chose" id="choseIDL">
+                        <option value="google">Google</option>
+                        <option value="bing">Bing</option>
+                        <option value="yahoo">Yahoo</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Newsletter</td>
+                <td>
+                    <input type="checkbox" name="check" id="box">
+                    Ensure this box is checkec if you would like to receive email updates
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="Send message">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

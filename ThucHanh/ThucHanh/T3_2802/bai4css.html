@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .lephai
+        {
+            text-align: right;
+        }
+        table
+        {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Trebuchet MS', 'Arial', 'Helvetica', 'sans-serif'
+        }
+        td,th
+        {
+            border: 1px solid #993738;
+            height: 30px;
+        }
+        thead
+        {
+            background-color: #993738;
+            color: white;
+
+        }
+        #title
+        {
+            text-align: center;
+            color: #993738;
+        }
+        .list .body tr:nth-child(2n+1)
+        {
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="title">
+        <h2>
+            Exercise example
+        </h2>
+    </div>
+    <div id="table">
+        <table class="list">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Region</th>
+                    <th style="text-align: right;">Percentage</th>
+                </tr>
+            </thead>
+            <tbody class="body">
+                <tr>
+                    <td>New England</td>
+                    <td class="lephai">12%</td>
+                </tr>
+                <tr>
+                    <td>Mid-Atlantic</td>
+                    <td class="lephai">19%</td>
+                </tr>
+                <tr>
+                    <td>South and Puerto Rico</td>
+                    <td class="lephai">15%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

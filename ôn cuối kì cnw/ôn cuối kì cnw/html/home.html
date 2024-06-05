@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jQuery.js"></script>
+    <style>
+        header
+        {
+            background-image: url(../img/title.png);
+            background-size: cover;
+            
+            height: 400px;
+        }
+        footer
+        {
+            text-align: center;
+            background-color: aqua;
+            padding: 20px;
+            color: white;
+        }
+    </style>
+    <script>
+        function check_name()
+        {
+            let names=document.getElementById("names");
+            let conditions=/[A-Z][A-Za-z]+(\s[A-Z][A-Za-z]*)+/g
+            if(names.value=="")
+            {
+                names.style.border="1px red solid";
+                names.setAttribute("placeholder","tên không được rỗng")
+                return false;
+            }
+            if(conditions.test(names.value))
+            {
+                names.style.border="none";
+                document.getElementById("span1").innerHTML=""
+                return true;
+            }
+            else
+            {
+                names.style.border="1px red solid";
+                document.getElementById("span1").innerHTML="tên phải viết hoa ký tự đầu!";
+                return false;
+            }
+        }
+        function kiemtra_dates()
+        {
+            let dates=document.getElementById("birthdate");
+            let homnay=new Date();
+            let valueDays= new Date(dates.value);
+            if(homnay < valueDays)
+            {
+                dates.style.border="1px red solid";
+                document.getElementById("span2").innerHTML="ngày phải trước ngày hiện tại";
+                return false;
+
+            }
+            else
+            {
+                dates.style.border="none";
+                document.getElementById("span2").innerHTML="";
+                return true;
+            }
+        }
+        function kiemtra_dienthoai()
+        {
+            let conditions=/^[0][938][\d]{8,8}/g
+            let phonenum=document.getElementById("phonenum");
+            if(phonenum.value=="")
+            {
+                phonenum.style.border="1px red solid";
+                document.getElementById("span3").innerHTML="không được để rỗng số điện thoại";
+                return false
+            }
+            if(conditions.test(phonenum.value) && phonenum.value.length<=10)
+            {
+                phonenum.style.border="none";
+                document.getElementById("span3").innerHTML="";
+                return true;
+            }
+            else
+            {
+                phonenum.style.border="1px red solid";
+                document.getElementById("span3").innerHTML="số điện thoại phải đủ 10 số và là số";
+                return false;
+            }
+        }
+        function kiemtra_email()
+        {
+            let conditions=/^[\w]+@[^\d]+(.com)$/g
+            let emails=document.getElementById("emails");
+            if(emails.value=="")
+            {
+                emails.style.border="1px red solid";
+                document.getElementById("span4").innerHTML="không được để rỗng email";
+                return false
+            }
+            if(conditions.test(emails.value))
+            {
+                emails.style.border="none";
+                document.getElementById("span4").innerHTML="";
+                return true;
+            }
+            else
+            {
+                emails.style.border="1px red solid";
+                document.getElementById("span4").innerHTML="email phải chứa ký tự @ và kết thúc là .com";
+                return false;
+            }
+        }
+        function chon_khoahoc()
+        {
+            let conditions=/^[\w]+@[^\d]+(.com)$/g
+            let options=document.getElementById("course").value;
+            let timehoc=document.getElementById("timehoc");
+            if(options=="Anh văn cơ bản")
+            {
+                timehoc.value="3 tháng";
+                return true;
+            }
+            if(options=="Anh văn giao tiếp")
+            {
+                timehoc.value="6 tháng";
+                return true;
+            }
+            if(options=="Luyện thi ielts")
+            {
+                timehoc.value="12 tháng";
+                return true;
+            }
+
+        }
+        var count=1;
+        function kiemtra()
+        {
+            let names=document.getElementById("names").value;
+            let dates=document.getElementById("birthdate").value;
+            let phonenum=document.getElementById("phonenum").value;
+            let emails=document.getElementById("emails").value;
+            let options=document.getElementById("course").value;
+            let cachinhthuc=document.querySelectorAll(".hinhthuc");
+            let danhsachkynang=document.querySelectorAll(".kynang")
+            let hinhthuc="";
+            cachinhthuc.forEach(
+                function(ht)
+                {
+                    if(ht.checked)
+                    {
+                        hinhthuc=ht.value;
+                    }
+
+                }
+            )
+            let kynang="";
+            danhsachkynang.forEach(
+                function(ht)
+                {
+                    if(ht.checked)
+                    {
+                        kynang+=ht.value+",";
+                    }
+                }
+            )
+            if(hinhthuc=="")
+            {
+                alert("hình thức rỗng");
+                return false;
+            }
+            if(check_name() && kiemtra_dates() && kiemtra_dienthoai() && kiemtra_email() && chon_khoahoc() && hinhthuc!="" && kynang!="")
+            {
+                document.getElementById("khoahoc").innerHTML+="<td>"+count+"</td>"+"<td>"+names+"</td>"+"<td>"+dates+"</td>"+
+                "<td>"+phonenum+"</td>"+
+                "<td>"+emails+"</td>"+
+                "<td>"+options+"</td>"+
+                "<td>"+hinhthuc+"</td>"+
+                "<td>"+kynang+"</td>";
+                count+=1;    
+                $("#mymodal1").modal("hide");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-inverse">
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a href="" class="navbar-brand">Free English Course</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Trang chủ</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Giới thiệu</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Khóa học</a></li>
+                <li class="nav-item"><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#mymodal1">Đăng Ký</button></li>
+            </ul>
+        </nav>
+        <div class="row">
+            <div class="col-12">
+                <h1>DANH SÁCH ĐĂNG KÝ KHÓA HỌC</h1>
+                <table class="table" id="khoahoc">
+                    <tr>
+                        <td>Số tt</td>
+                        <td>Họ Tên</td>
+                        <td>Ngày sinh</td>
+                        <td>Điện thoại</td>
+                        <td>Email</td>
+                        <td>Khóa học</td>
+                        <td>Hình thức học</td>
+                        <td>Kỹ năng cần luyện</td>
+                    </tr>
+                    <tr>
+                        <td>(1)</td>
+                        <td>(2)</td>
+                        <td>(3)</td>
+                        <td>(4)</td>
+                        <td>(5)</td>
+                        <td>(6)</td>
+                        <td>(7)</td>
+                        <td>(8)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <footer>
+            <h3>Thông tin sinh viên:</h2>
+            <h3><i>Họ tên:..........</i></h2>
+            <h3><i>Mã Sinh viên:..........</i></h2>
+            <h3><i>Mã lớp:..........</i></h2>
+        </footer>
+    </div>
+    <div class="modal" id="mymodal1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Thông Tin Đăng Ký</h1>
+                    <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form">
+                        <div class="row">
+                            <div class="col-3" style="text-align: right;"><label for="">Họ tên</label></div>
+                            <div class="col-8"><input type="text" class="form-control" id="names" onblur="check_name()">
+                                <br>
+                                <span id="span1" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-3" style="text-align: right;"><label for="">Ngày Sinh</label></div>
+                            <div class="col-8"><input type="date" class="form-control" id="birthdate" onblur="kiemtra_dates()">
+                                <br>
+                                <span id="span2" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-3" style="text-align: right;"><label for="">Số Điện Thoại</label></div>
+                            <div class="col-8"><input type="text" class="form-control" id="phonenum" onblur="kiemtra_dienthoai()">
+                                <br>
+                                <span id="span3" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-3" style="text-align: right;"><label for="">Email</label></div>
+                            <div class="col-8"><input type="email" class="form-control" id="emails" onblur="kiemtra_email()">
+                                <br>
+                                <span id="span4" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mt-4" >
+                            <div class="col-3" style="text-align: right;"><label for="">Chọn Khóa Học</label></div>
+                            <div class="col-8"><select name="" id="course" class="form-control" onchange="chon_khoahoc()">
+                                <option value="Anh văn cơ bản">Anh văn cơ bản</option>
+                                <option value="Anh văn giao tiếp">Anh văn giao tiếp</option>
+                                <option value="Luyện thi ielts">Luyện thi ielts</option>
+                            </select></div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-3" style="text-align: right;"><label for="">Thời gian học</label></div>
+                            <div class="col-8"><input type="text" class="form-control" id="timehoc">
+                                <br>
+                                <span id="span5" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-3" style="text-align: right;"><label for="">Hình thức học</label></div>
+                            <div class="col-8"><input type="radio" class="hinhthuc" name="chon" id="radio1" value="Học tại trung tâm"> Học Tại trung tâm
+                                <br>
+                                <input type="radio" name="chon" class="hinhthuc" id="radio2" value="Học online"> Học online
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-3" style="text-align: right;"><label for="">Các kỹ năng luyện tập</label></div>
+                            <div class="col-8"><input type="checkbox" class="kynang" name="chon" id="checkbox1" value="Kỹ năng nghe"> Kỹ năng nghe
+                                <br>
+                                <input type="checkbox" name="chon" class="kynang" id="checkbox2" value="Kỹ năng đọc"> Kỹ năng đọc
+                                <br>
+                                <input type="checkbox" name="chon" class="kynang" id="checkbox3" value="Kỹ năng viết"> Kỹ năng viết
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" onclick="kiemtra()">Đăng ký</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

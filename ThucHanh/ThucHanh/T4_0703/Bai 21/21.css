@@ -1,0 +1,45 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    background-color: pink;
+
+}
+
+.header
+{
+    text-align: center;
+    border: 1px solid black;
+}
+.nav
+{
+    width: 25%;
+    height: 300px;
+    border: 1px solid black;
+    float: left;
+}
+
+.khoang
+{
+    width: 45%;
+    height: 300px;
+    border: 1px solid black;
+    float: left;
+}
+.section
+{
+    width: 30%;
+    height: 300px;
+    border: 1px solid black;
+    float: left;
+}
+
+.footer
+{
+    display: block;
+    text-align: center;
+    margin-top: 0px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid black;
+}

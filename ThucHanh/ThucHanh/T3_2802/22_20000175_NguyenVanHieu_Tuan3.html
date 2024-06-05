@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="22_20000175_NguyenVanHieu">
+    <title>Bài 12-13-14</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            position: relative;
+            width: 600px;
+            box-shadow: 1px 1px 4px #888, -1px -1px 4px #888;
+            padding: 8px;
+            overflow: hidden;
+        }
+        .banner{
+            background-color: rgb(197, 23, 23);
+            color: #fff;
+            position: absolute;
+            top: 12px;
+            left: -47px;
+            border-bottom: 2px solid red;
+            border-top: 2px solid red;
+            transform: rotate(-45deg);
+            padding: 8px 40px;
+            box-shadow: 0 0 10px #888888;
+        }
+        .title{
+            font-size: 45px;
+            text-shadow:   0 0 3px #000000,    3px 0 3px #000000, 0 3px 3px #000000,  -3px 0 3px #000000,  0 -3px 3px #000000;
+        }
+        .group-inline-block{
+            display: inline-block;
+            text-align: center;
+            max-width: 120px;
+            border: 1px solid rgb(88, 88, 248);
+            padding: 8px 0;
+            cursor: pointer;
+        }
+        .group-inline-block:hover > .image-bai13{
+            transform: scale(1.2);
+            transition: 0.3s;
+        }
+        .image-bai13{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            
+        }
+        .text-content{
+            padding-top: 8px;
+            margin: 0;
+        }
+        .bai{
+            text-decoration: none;
+            color: #000;
+            font-size: 22px;
+            margin-right: 12px;
+        }
+        .bai:hover{
+            color: red;
+            transition: 0.3s;
+        }
+        .transition{
+            width: 300px;
+            height: 170px;
+            background-color: #6fac21;
+            opacity: 0.8;
+            border-radius: 10px;
+            transition: all 2s linear;
+            margin: 50px;
+            text-align: justify;
+            border-bottom: dashed;
+            border-left: double;
+            border-right: dashed;
+            border-top: double;
+            border-color: red;
+        }
+        #transition{
+            color: white;
+            font-size: 15px;
+            text-align: justify;
+            line-height: 16px;
+            transition: all 2s;
+            margin: 0 auto;
+        }
+        .transition:hover{
+            transform: scale(2) rotate(360deg);
+            background-color: #1ec7e6;
+            opacity: 0.8;
+        }
+
+
+    </style>
+</head>
+<body>
+    <a href="#bai12" class="bai">Click để đến bài 12</a>
+    <a href="#bai13" class="bai">Click để đến bài 13</a>
+    <a href="#transition" class="bai">Click để đến bài 14</a>
+    <br> <br>
+    <div class="container" id="bai12">
+        <p class="banner">Best Seller 2015</p>
+        <h1 class="title">Cascading Style Sheets Book</h1>
+        <p>Casading Style Sheets (CSS) is a style sheet languege used for describing the look
+            and formatting of a document written in a markup languague. Although most often used to
+            change the style of web pages and user interfaces written in HTML and XHTML the language 
+            can be applied to any kind of XML document, including plain XML, SVG and 
+            XUL. Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites
+            to create visually engaging webpages, users interfaces for web applications and user interface
+            for many mobile applications
+        </p>
+    </div>
+    <div id="bai13" style="box-shadow: 1px 1px 3px #888, -1px -1px 3px #888; padding: 8px; margin-top: 16px; display: inline-block;">
+        <div class="group-inline-block">
+            <img class="image-bai13"  src="https://images.unsplash.com/photo-1615591144999-0b56442e2116?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zmxvd2VyJTIwYXJyYW5nZW1lbnR8ZW58MHx8MHx8&w=1000&q=80" alt="hoa hồng">
+            <p class="text-content">Hoa Hồng Xinh Xắn</p>
+        </div>
+        <div class="group-inline-block">
+            <img class="image-bai13" src="https://www.thoughtco.com/thmb/U3uVJMsgzLd00DbkIicnnIYM_kM=/1414x1414/smart/filters:no_upscale()/lotus-flower-828457262-5c6334b646e0fb0001dcd75a.jpg" alt="hoa sen">
+            <p class="text-content">Hoa Sen Việt Nam</p>
+        </div>
+        <div class="group-inline-block">
+            <img class="image-bai13" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkviB90B7UOowzJpygck_w6oX6uSe-jbyugA&usqp=CAU" alt="hoa hướng dương">
+            <p class="text-content">Hoa Hướng Dương</p>
+        </div>
+        <div class="group-inline-block">
+            <img class="image-bai13" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Bachelor%27s_button%2C_Basket_flower%2C_Boutonniere_flower%2C_Cornflower_-_3.jpg/800px-Bachelor%27s_button%2C_Basket_flower%2C_Boutonniere_flower%2C_Cornflower_-_3.jpg" alt="hoa tím">
+            <p class="text-content">Hoa Tím thuần khiết</p>
+        </div>
+    </div>
+    <div id="transition" class="transition">
+        <p>Casading Style Sheets (CSS) is a style sheet languege used for describing the look
+            and formatting of a document written in a markup languague. Although most often used to
+            change the style of web pages and user interfaces written in HTML and XHTML the language 
+            can be applied to any kind of XML document, including plain XML, SVG and 
+            XUL.</p>
+    </div>
+</body>
+</html>

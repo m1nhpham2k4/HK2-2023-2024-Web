@@ -1,0 +1,35 @@
+body {
+    background-image: url('../img/hero-bg.jpg');
+}
+
+img {
+width: 100%;
+}
+
+.container {
+height: 100%;
+width: 100%;
+margin: 0 flex;
+flex-direction: column;
+color: white;
+}
+
+.BoxText {
+    width: 45%;
+    margin-top: 20%;
+}
+
+h1 {
+font-family: 'Magneto', sans-serif;
+}
+
+.carousel-indicators {
+position: absolute;
+right: 60%;
+transform: translateY(90%);
+z-index: 15; /* Đảm bảo indicators nằm trên BoxText */
+}
+
+.modal-content {
+color: rgb(0, 0, 0);
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai3</title>
+    <link rel="stylesheet" href="../bootstrap-4.4.1-dist/css/bootstrap.css">
+    <script src="../bootstrap-4.4.1-dist/js/jquery-3.4.1.min.js"></script>
+    <script src="../bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+
+            function toggleSubmitButton() {
+                let name = $("#txtten").val().trim();
+                let isValidName = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/.test(name);
+                if (isValidName) {
+                    $("#btndk").prop('disabled', false);
+                    $("#erten").html("*");
+                    $("#txtten").removeClass("border-text");
+                } else {
+                    $("#btndk").prop('disabled', true);
+                    $("#erten").html("Tên sai!!!");
+                    $("#txtten").addClass("border-text");
+                }
+            }
+
+
+            $("#txtten").blur(function(e) {
+                toggleSubmitButton();
+            });
+
+
+            $("#btndk").click(function(e) {
+                e.preventDefault();
+                let ten = $("#txtten").val().trim();
+                let lop = $("#lstlop option:selected").text();
+                let mon = $("#lstmon option:selected").text();
+                let loai = $("input[name='loai']:checked").val();
+
+                let trnew = "<tr><td>" + ten + "</td><td>" + lop + "</td><td>" + mon + "</td><td>" + loai + "</td></tr>";
+                $("#tbl tbody").append(trnew);
+
+                $("#txtten").val("");
+                $("#lstlop").val("");
+                $("#lstmon").val("");
+                $("input[name='loai']").prop("checked", false);
+
+                $("#btndk").prop('disabled', true);
+                $("#erten").html("*");
+            });
+
+            $("#lstmon").change(function(e) {
+                let stc = $("#lstmon option:selected").val();
+                $("#txtstc").val(stc);
+            });
+
+            toggleSubmitButton();
+        });
+    </script>
+
+    <style>
+        .error {
+            color: red;
+            font-style: italic;
+        }
+        
+        .border-text {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <div class="form-group">
+                <label for="txtten">Họ tên</label>
+                <input type="text" class="form-control" id="txtten">
+                <span id="erten">*</span>
+            </div>
+            <div class="form-group">
+                <label for="lstlop">Lớp</label>
+                <select id="lstlop" class="form-control">
+                    <option value="DHKHMT18">DHKHMT18</option>
+                    <option value="DHCNTT18">DHCNTT18</option>
+                    <option value="DHKTPM18">DHKTPM18</option>
+                    <option value="DHHTTT18">DHHTTT18</option>
+                    <option value="DHKHDL18">DHKHDL18</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="lstmon">Môn học</label>
+                <select id="lstmon" class="form-control">
+                    <option value="LTWeb">LTWeb</option>
+                    <option value="LTHDT">LTHDT</option>
+                    <option value="Anh Van">Anh Van</option>
+                    <option value="LTHSK">LTHSK</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Loại</label>
+                <div>
+                    <input type="radio" name="loai" value="Ly thuyet"> Lý thuyết
+                    <input type="radio" name="loai" value="Thuc hanh"> Thực hành
+                </div>
+            </div>
+            <div>
+                <input type="button" value="Đăng ký" id="btndk" class="btn btn-primary" disabled>
+            </div>
+        </form>
+        <hr>
+        <table class="table table-bordered" id="tbl">
+            <thead>
+                <tr>
+                    <th>Họ tên</th>
+                    <th>Lớp</th>
+                    <th>Môn học đăng ký</th>
+                    <th>Loại</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

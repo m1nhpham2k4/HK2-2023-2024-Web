@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bai16.css">
+    <script src="bai16.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <form action="dangki">
+            <h1>
+                Đăng kí tài khoản
+            </h1>
+            <table>
+                <tr>
+                    <td class="Cot1">Tên Đăng Nhâp: </td>
+                    <td class="Cot2">
+                        <input type="text" name="tendn" id="texttendn" required class="dorong" placeholder="Nhập vào tên đăng nhập" onblur="kiemtratendn()">
+                    </td>
+                    <td class="Cot3" id="er-tendn">
+                        *
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Cot1">Mật khẩu: </td>
+                    <td class="Cot2" ><input type="password" name="mk" id="textmk" required class="dorong" placeholder="Nhập vào mật khẩu" onblur="kiemtramk()"></td>
+                    <td class="Cot3" id="er-mk">
+                        *
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Cot1">Nhập lại mật khẩu: </td>
+                    <td class="Cot2" ><input type="password" name="nlmk" id="textnlmk" required class="dorong" placeholder="Nhập vào xác nhận mật khẩu" onblur="kiemtranlmk()"></td>
+                    <td class="Cot3" id="er-nlmk">
+                        *
+                    </td>
+                </tr>
+            </table>
+            <h3>Thông tin cá nhân</h3>
+            <table>
+                <tr>
+                    <td class="Cot1">Họ và tên: </td>
+                    <td class="Cot2" ><input type="text" name="ht" id="textht" placeholder="Nhập vào họ tên (bắt buộc nhập)" required class="dorong" onblur="kiemtraht()"></td>
+                    <td class="Cot3" id="er-hoten">
+                        *
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Cot1">Ngày sinh: </td>
+                    <td class="Cot2" ><input type="date" name="date" id="textdate" required></td>
+                    <td class="Cot3" id="">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Cot1">Giới tính: </td>
+                    <td class="Cot2" >
+                        <input type="radio" name="chongioitinh" id="gioitinh"> Nam
+                        <input type="radio" name="chongioitinh" id="gioitinh"> Nữ
+                    </td>
+                    <td class="Cot3" id="">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Cot1">Địa chỉ: </td>
+                    <td class="Cot2" >
+                        <input type="text" name="diachi" id="textdiachi" placeholder="Nhập vào địa chỉ" required  class="dorong">
+                    </td>
+                    <td class="Cot3" id="">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Cot1">Số điện thoại: </td>
+                    <td class="Cot2" ><input type="text" name="sdt" id="textsdt" placeholder="Nhập vào số điện thoại (9-10 số)" required  class="dorong" onblur="kiemtrasdt()"></td>
+                    <td class="Cot3" id="ersdt">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Cot1">Email: </td>
+                    <td class="Cot2" ><input type="email" name="emain" id="textemail" placeholder="Nhập vào Email cá nhân theo dạng ten@tencongty.com" required  class="dorong"></td>
+                    <td class="Cot3" id="er-email">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center" colspan="2"> 
+                        <input type="button" value="Đăng kí" class="nut" >
+                        <input class="nut" type="submit" value="Hủy">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

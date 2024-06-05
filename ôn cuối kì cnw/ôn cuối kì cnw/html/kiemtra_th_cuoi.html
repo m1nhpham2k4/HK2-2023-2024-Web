@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jQuery.js"></script>
+    <script src="../js/kiemtra_th_cuoi.js"></script>
+    <style>
+        header
+        {
+            background-image: url(../img/Screenshot\ 2024-05-14\ 151814.png);
+            height: 300px;
+            background-size: cover;
+            text-align: center;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="text-danger"><i>Công Lý Sẽ Thuộc Về Demacia!</i></h1>
+            <button type="button" class="btn btn-danger" data-bs-target="#mymodal1" data-bs-toggle="modal">
+                Đặt Ngay
+            </button>
+        </header>
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center;">DANH SÁCH ĐẶT HÀNG</h1>
+                <table class="table table-danger table-bordered" id="mytable1">
+                    <tr style="text-align: center;">
+                        <td>SỐ TT</td>
+                        <td>Họ Tên Khách Hàng</td>
+                        <td>Địa Chỉ</td>
+                        <td>Thời Gian Giao Hàng</td>
+                        <td>Email</td>
+                        <td>Điện Thoại</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="mymodal1" >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Thông Tin Đặt Hàng</h1>
+                    <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form">
+                        <div class="form-group">
+                            <label for="" class="label">Họ Tên:</label>
+                            <input type="text" class="form-control" id="name" onblur="kiemTraTen()">
+                            <span class="text-danger" id="span1">*</span>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="" class="label">Địa Chỉ:</label>
+                            <input type="text" class="form-control" id="addr" onblur="kiemTraDiaChi()">
+                            <span class="text-danger" id="span2">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="label">Email:</label>
+                            <input type="email" class="form-control" id="email" onblur="kiemTraEmail()">
+                            <span class="text-danger" id="span3">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="label">Thời Gian Giao Hàng:</label>
+                            <input type="text" class="form-control" id="times" onblur="kiemTraTimeGiaoHang()">
+                            <span class="text-danger" id="span4">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="label">Số Điện Thoại:</label>
+                            <input type="tel" class="form-control" id="phones" onblur="kiemTraSDT()">
+                            <span class="text-danger" id="span5">*</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
+                    <button type="button" class="btn btn-primary" onclick="luuDonHang()">Đặt Hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

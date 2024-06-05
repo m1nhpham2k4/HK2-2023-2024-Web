@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    height: 750px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+header {
+    width: 100%;
+    height: 200px;
+}
+
+header img {
+    width: 100%;
+    height: 200px;
+}
+
+header h1 {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    font-size: 50px;
+    padding-right: 200px;
+}
+
+.menu {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    border: 1px solid black;
+}
+
+.content {
+    width: 100%;
+    height: 350px;
+    display: flex;
+}
+
+.menu_con {
+    width: 70%;
+    height: 100px;
+}
+
+.menu_con ul {
+    display: flex;
+}
+
+.menu_con ul li {
+    padding: 30px;
+    list-style: none;
+}
+
+.menu_con ul li a {
+    color: rgb(0, 126, 99);
+    padding: 15px;
+    background-color: white;
+    box-shadow: 10px 10px 10px rgb(0, 142, 139);
+    text-decoration: none;
+}
+
+.search {
+    width: 30%;
+    height: 100px;
+    padding-top: 50px;
+}
+
+.search input {
+    border-radius: 20px;
+    padding-left: 30px;
+}
+
+.search button {
+    border-radius: 15px;
+    padding: 5px;
+    margin-left: 15px;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(0, 138, 138);
+}
+
+footer i {
+    color: white;
+    padding: 8px;
+    margin-left: 40%;
+}
+
+.left {
+    width: 50%;
+    height: 350px;
+    background-color: rgb(211, 247, 247);
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.right {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-left: 10px;
+    width: 49%;
+    height: 350px;
+    background-color: rgb(250, 237, 220);
+}
+
+.thongtin {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    color: rgb(6, 28, 167);
+    text-shadow: 1px 1px 1px blue;
+}
+
+.phan1 p {
+    background-color: white;
+    padding: 30px;
+    box-shadow: 20px 20px 20px rgb(142, 145, 148);
+    margin: 0px 40px 10px 40px;
+}
+
+.form {
+    padding-left: 30px;
+}
+
+#id1 {
+    width: 70%;
+    border-radius: 20px;
+}
+
+.id2 {
+    width: 34%;
+    border-radius: 20px;
+}
+
+.slc {
+    border-radius: 15px;
+    width: 22%;
+}
+
+.sumbit {
+    padding-top: 5px;
+    width: 100%;
+    display: flex;
+    margin-right: 100px;
+    justify-content: center;
+}
+
+.id3 {
+    background-color: rgb(0, 138, 138);
+    padding: 4px;
+    padding-left: 5px;
+    margin-right: 5px;
+}
+
+.thongtin1 {
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    color: rgb(6, 28, 167);
+    text-shadow: 1px 1px 1px blue;
+}
+
+.chia3phan {
+    width: 100%;
+    height: 300px;
+}
+
+.cacphan {
+    width: 100%;
+    height: 100px;
+}
+
+.tieude {
+    height: 40px;
+    background-color: aqua;
+}
+
+.img_and_tt {
+    display: flex;
+}
+
+.img_and_tt img {
+    width: 30%;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.menu_con ul li a:hover {
+    background-color: yellow;
+    color: red;
+}

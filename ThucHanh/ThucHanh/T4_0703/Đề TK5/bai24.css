@@ -1,0 +1,197 @@
+*
+{
+    margin: 0%;
+    padding: 0;
+}
+
+.logo
+{
+    width: 100%;
+    /* border: 1px solid red; */
+    height: 110px;
+    /* line-height: 110px; */
+    background-color: #9d9a95;
+}
+
+.menu
+{
+    width: 100%;
+    background-color: #AEACA8;
+    height: 30px;
+    line-height: 30px;
+}
+
+.left
+{
+    width: 70%;
+    height: 500px;
+    float: left;
+    border-right: 1px solid gray ;
+}
+.right
+{
+    width: 29%;
+    height: 500px;
+    float: left;
+}
+.footer
+{
+    width: 100%;
+    float: left;
+    background-color: #AEACA8 ;
+    height: 30px;
+}
+
+.tenlogo
+{
+    /* border: 1px solid black; */
+    margin: 20px;
+    position: absolute;
+
+}
+
+.ten
+{
+    position: relative;
+    /* border: 3px solid #73AD21; */
+    left: 100px;
+    top: 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+.ten p
+{
+    font-size: 23px;
+    font-weight: normal;
+}
+.menu ul
+{
+    list-style: none;
+    /* text-align: center; */
+    margin-left: 10px;
+}
+.menu li
+{
+    display: inline-block;
+    /* position: absolute; */
+    /* border: 1px solid red; */
+    width: 7%;
+    height: 100%;
+    text-align: center;
+    margin-left: -5px;
+}
+
+.menu a
+{
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.menu a:hover
+{
+    color: black;
+}
+.top
+{
+    float: left;
+    width: 100%;
+    height: 50%;
+}
+.bottom
+{
+    float: left;
+    width: 100%;
+    height: 50%;
+}
+
+.hinhanh
+{
+    float: left;
+    width: 50%;
+    height: 100%;
+    /* padding: 20px; */
+    /* border: 1px solid red; */
+
+}
+.vanban
+{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.anh1
+{
+    margin: 50px 50px 0 100px;
+}
+
+.hinhanh p
+{
+    margin: 0px 50px 50px 100px;
+}
+
+.vien1
+{
+    position: absolute;
+    border: 1px solid gray;
+    width: 260px;
+    height: 190px;
+    left: 87px;
+    top: 180px;
+}
+.vien2
+{
+    position: absolute;
+    border: 1px solid gray;
+    width: 260px;
+    height: 190px;
+    left: 87px;
+    top: 430px;
+}
+.vanban h2
+{
+    color: gray;
+    padding-top: 80px;
+    /* border-bottom: 1px solid red; */
+}
+.vanban
+{
+    width: 300px;
+}
+
+.phobien h2
+{
+    padding-top: 80px;
+    padding-left: 20px;
+    color: pink;
+}
+.monan
+{
+    color: pink;
+    /* padding-top: 20px; */
+    padding-left: 30px;
+}
+
+.monan h3
+{
+    padding-top: 20px;
+}
+
+.contact
+{
+    padding-top: 40px;
+    padding-left: 20px;
+    width: 120px;
+}
+.contact h2
+{
+    color: pink;
+    padding-bottom: 20px;
+}
+.footer p
+{
+    color: white;
+    padding: 10px 0px 0px 20px;
+}

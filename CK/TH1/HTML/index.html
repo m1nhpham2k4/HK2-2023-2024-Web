@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="../JS/jQuery.js"></script>
+    <title>TH1</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="../IMG/banner2.png" alt="" class="img-fluid">
+        </header>
+        <div class="nav pt-3">
+            <a href="" class="nav-link"><h5>Shein.com</h5></a>
+            <a href="" class="nav-link">Trang chủ</a>
+            <a href="" class="nav-link">Giới thiệu</a>
+            <a href="" class="nav-link">Trang phục công sở</a>
+            <a href="" class="nav-link">Phụ kiện</a>
+            <a href="" class="nav-link">Bộ sưu tập</a>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Đặt mua
+            </button>
+        </div>
+        <h1 class="mt-4">Danh sách đơn đặt hàng</h1>
+        <table class="table table-bordered mt-5" id="table1">
+            <thead>
+                <tr>
+                    <th>Số thứ tự</th>
+                    <th>Họ tên khách hàng</th>
+                    <th>Điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th>Phương thức thanh toán</th>
+                </tr>
+            </thead>
+        </table>
+
+        <!-- Thông tin -->
+        <div class="text-center bg-danger" style="color: white;">
+            <h6>Thông tin sinh viên</h6>
+                <p>Họ tên: Phạm Viết Dũng Minh </p>
+                <p>Mã sinh viên: 22676391</p>
+                <p>Mã lớp: DHKHMT18ATT</p>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: aqua;">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Thông tin khách hàng</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="for" class="form">
+                    <table class="table">
+                        <tr>
+                            <td><label for="errname" class="form-label">Họ tên khách hàng</label></td>
+                            <td>
+                                <input type="text" class="form-control" id="txtName">
+                                <span id="errName" style="color: red;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="" class="form-label">Điện thoại</label></td>
+                            <td>
+                                <input type="text" class="form-control" id="txtSDT">
+                                <span id="errSDT"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="" class="form-label" id="">Địa chỉ</label></td>
+                            <td>
+                                <input type="text" class="form-control" id="txtDC">
+                                <span id="errDC" style="color: red;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="" class="form-label">Chọn sản phẩm</label></td>
+                            <td>
+                                <select name="" class="form-select" id="slSP">
+                                    <option value="Áo thun cây thông noel">Áo thun cây thông noel</option>
+                                    <option value="Đầm công sở A1">Đầm công sở 1</option>
+                                    <option value="Chân váy Coton">Chân váy Coton</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="" class="form-label" id="select-dg">Đơn giá</label></td>
+                            <td><input type="text" class="form-control" id="Dongia" style="background-color: #e6e3e3;"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="" class="form-label" id="">Số lượng</label></td>
+                            <td>
+                                <input type="text" class="form-control" id="txtSL">
+                                <span id="errSL" style="color: red;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="" class="form-label">Chọn hình thức thanh toán</label></td>
+                            <td>
+                                <input type="radio" value="Thanh toán khi nhận hàng" id="ttknh" name="ttonl" id="hinhthuc1">Thanh toán khi nhận hàng
+                                <br>
+                                <input type="radio" value="Thanh toán online" id="ttonl" name="ttonl"id="hinhthuc2">Thanh toán online
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="" class="form-label">Thành tiền</label></td>
+                            <td>
+                                <input type="text" class="form-control" id="thanhtien">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+              </div>
+              <button type="button" class="btn btn-success"  id="Dat">Đặt mua</button>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger">Hủy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+        $(function(){
+            $("#staticBackdrop").on('shown.bs.modal', function(){
+                $("#txtName").focus();
+            });
+    
+            $('#Dongia').val('350000');
+    
+            // Kiểm tra họ và tên
+            $("#txtName").blur(function(){
+                var ten = document.getElementById("txtName").value;
+                if(ten == "" || ten == null)
+                    errName.innerHTML = "Họ tên không được rỗng";
+                else{
+                    var reg = /^[A-Z]{1}[a-z]{0,6}(\s([A-Z]{1}[a-z]{0,6})){1,6}$/;
+                    if(reg.test(ten) == false)
+                        errName.innerHTML = "Họ tên không hợp lệ"
+                    else
+                        errName.innerHTML = "Hợp lệ"
+                }
+            });
+            $("#txtDC").blur(function(){
+                var dc = document.getElementById("txtDC").value;
+                if(dc == "" || dc == null)
+                    errDC.innerHTML = "Địa chỉ không được rỗng";
+                else{
+                    errDC.innerHTML = "Hợp lệ";
+                }
+            })
+            $("#txtSDT").blur(function(){
+                var sdt = document.getElementById("txtSDT").value;
+                if(sdt == "" || sdt == null)
+                    errSDT.innerHTML = "Số điện thoại không được rỗng và đầu số là 09 or 03"
+                else{
+                    var test = /^\d{10}$/;
+                    var test2 = /^[0]{1}[9]{1}\d{8}|[0]{1}[3]{1}\d{8}$/;
+                    if(test.test(sdt) == true && test2.test(sdt) == true)
+                        errSDT.innerHTML = "Hợp lệ";
+                    else
+                        errSDT.innerHTML = "Định dạng số không họp lệ"
+                }
+            })
+            $("#txtSL").blur(function(){
+                var SL = parseInt(document.getElementById("txtSL").value)
+                if(SL > parseInt(0) && SL <= parseInt(50))
+                {
+                    errSL.innerHTML = "Hop le"
+                    var dongia = $("#Dongia").val();
+                    var thanhtien1 = SL * parseInt(dongia);
+                    $("#thanhtien").val(thanhtien1);
+                }
+                else
+                    errSL.innerHTML = "Khong hop le"
+            })
+
+            $("#slSP").change(function(){
+                var sp = document.getElementById("slSP").value;
+                if(sp == 'Áo thun cây thông noel')
+                    $('#Dongia').val('350000');
+                else if(sp == 'Đầm công sở A1')
+                    $('#Dongia').val('500000');
+                else if(sp == "Chân váy Coton")
+                    $("#Dongia").val('550000');
+
+            })
+            
+            var dem = 1;
+
+
+            $("#Dat").click(function(){
+                var name = $("#txtName").val();
+                var dc = $("#txtDC").val();
+                var sdt = $("#txtSDT").val();
+                var sl = $("#slSP").val();
+                var dg = $("#Dongia").val();
+                var sg = $("#txtSL").val(); 
+                var tt = $("#thanhtien").val(); 
+                var ht1 = $("#hinhthuc1").text(); 
+                var ht2 = $("#hinhthuc2").text(); 
+                var row = `<tr>
+                    <td>${dem++}</td>
+                    <td>${name}</td>
+                    <td>${sdt}</td>
+                    <td>${dc}</td>
+                    <td>${sl}</td>
+                    <td>${dg}</td>
+                    <td>${sg}</td>
+                    <td>${tt}</td>
+                    <td>${ht1}</td>
+                    <td>${ht2}</td>
+                </tr>`;
+
+                $("#table1").append(row);
+            });
+
+            
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuối kì</title>
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="../JS/jQuery.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="../IMG/Header.png" alt="" class="img-fluid w-100" style="height: 200px;"> 
+        </header>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <!-- Button trigger modal -->
+            <a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Nhập sách
+            </a>
+          </li>
+        </ul>
+        <form action="" class="form">
+            <table class="table table-bodered" id="table1">
+                <thead>
+                    <th>STT</th>
+                    <th>Mã Sách</th>
+                    <th>Hình minh họa</th>
+                    <th>Ngày nhập</th>
+                    <th>Số lượng</th>
+                    <th>Nhà xuất bản</th>
+                    <th>Chiết khấu</th>
+                    <th>Thể loại</th>
+                </thead>
+            </table>
+        </form>
+        <footer>
+            <button class="w-100">22676391 - Phạm Viết Dũng Minh - DHKHMT18ATT</button>
+        </footer>
+    </div>
+    <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">PHIẾU NHẬP KHO TRỰC TUYẾN</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" class="form">
+              <div class="form-group">
+                  <label for="" class="form-label">Mã sách</label>
+                  <br>
+                  <input type="text" name="" id="inpma" class="form-control">
+                  <span id="errma"></span>
+              </div>
+              <div class="form-group">
+                  <label for="" class="form-label">Hình minh họa</label>
+                  <br>
+                  <input type="file" name="" id="inpHa" class="form-control">
+                  <span id="errHa"></span>
+              </div>
+              <div class="form-group">
+                  <label for="" class="form-label">Ngày nhập</label>
+                  <br>
+                  <input type="date" name="" id="inpngay" class="form-control">
+                  <span id="errngay"></span>
+              </div>
+              <div class="form-group">
+                  <label for="" class="form-label">Số lượng</label>
+                  <br>
+                  <input type="text" name="" id="inpsl" class="form-control">
+                  <span id="errsl"></span>
+              </div>
+              <div class="form-group">
+                  <label for="" class="form-label">Nhà xuất bản</label>
+                  <br>
+                  <div class="mb-3">
+                    <select class="form-select" id="inpnxb">
+                      <option value="Nhà xuất bản Kim Đồng">Nhà xuất bản Kim Đồng</option>
+                      <option value="Nhà xuất bản Trẻ">Nhà xuất bản Trẻ</option>
+                      <option value="Nhà xuất bản Thế Giới Mới">Nhà xuất bản Thế Giới Mới</option>
+                      <option value="Nhà xuất bản Tri thức">Nhà xuất bản Tri thức</option>
+                    </select>
+                  </div>
+                  <span id="errnxb"></span>
+              </div>
+              <div class="form-group">
+                  <label for="" class="form-label">Chiết khấu</label>
+                  <br>
+                  <input type="text" name="" id="inpck" class="form-control" style="background-color: #cfcece;">
+              </div>
+              <div class="form-group">
+                  <label for="" class="form-label">Thể loại</label>
+                  <br>
+                  <input type="checkbox" name="" id="inptl" value="Văn Học"> Văn Học
+                  <input type="checkbox" name="" id="inptl" style="margin-left: 15px;" value="Khoa Học"> Khoa Học
+                  <input type="checkbox" name="" id="inptl" style="margin-left: 15px;" value="Thiếu Nhi"> Thiếu Nhi
+                  <span id="errtl"></span>
+              </div>
+              <div class="form-group pt-5">
+                  <button type="button" class="btn btn-primary" id="nhap">Nhập kho</button>
+              </div>
+          </form>  
+          <hr>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+    $(function(){
+
+        $("#staticBackdrop").on('shown.bs.modal', function(){
+                $("#inpma").focus();
+        });
+        $("#inpck").val('25%')
+        $("#inpma").blur(function(){
+            var reg = /^\d{3}-\d{2}-[A-Z]{3}$/
+            var ma = document.getElementById("inpma").value;
+            if(reg.test(ma)){
+                errma.innerHTML = ""
+            }
+            else{
+                errma.innerHTML = "Mã sách có định dạng không đúng vui lòng nhập lại"
+                $("#inpma").focus()
+            }
+        })
+
+        $("#inpHa").change(function(){
+            var ha = document.getElementById("inpHa").value;
+            var reg = /^(.+.jpg|.+.png|.+.gif)$/
+            if(reg.test(ha))
+            {
+                errHa.innerHTML = ""
+            }
+            else{
+                errHa.innerHTML = "File hình ảnh không hợp lệ vui lòng chọn lại"
+            }
+        })
+
+        $("#inpngay").change(function(){
+            var ngay = new Date($("#inpngay").val())
+            var hientai = new Date()
+            if(ngay > hientai){
+                errngay.innerHTML = ""
+            }
+            else{
+                errngay.innerHTML = "Ngày nhập phải sau ngày hiện tại"
+            }
+        })
+
+        $("#inpsl").blur(function(){
+            var soluong = parseInt(document.getElementById("inpsl").value)
+            if(soluong > 0 && soluong < 1000){
+                errsl.innerHTML = ""
+            }
+            else{
+                errsl.innerHTML = "Nhập số lượng không hợp lệ vui lòng nhập lại"
+            }
+        })
+
+        $("#inpnxb").change(function(){
+            var nxb = document.getElementById("inpnxb").value;
+            if(nxb == "Nhà xuất bản Kim Đồng")
+                $("#inpck").val('25%')
+            if(nxb == "Nhà xuất bản Trẻ")
+                $("#inpck").val('20%')
+            if(nxb == "Nhà xuất bản Thế Giới Mới")
+                $("#inpck").val('30%')
+            if(nxb == "Nhà xuất bản Tri thức")
+                $("#inpck").val('35%')
+        })
+            // Khai báo một mảng để lưu trữ các giá trị checkbox đã chọn
+        var theloaiArray = [];
+
+        // Bắt sự kiện khi có thay đổi trên các checkbox
+        $("input[type='checkbox']").change(function() {
+            // Xóa các giá trị cũ trong mảng
+            theloaiArray = [];
+            // Duyệt qua tất cả các checkbox và lấy giá trị của các checkbox được chọn
+            $("input[type='checkbox']:checked").each(function() {
+                theloaiArray.push($(this).val());
+            });
+        }); 
+
+        $("#nhap").click(function(){
+            var dem = 1;
+            var maso = $("#inpma").val()
+            var ha = $("#inpHa").val()
+            var ngay = $("#inpngay").val()
+            var sl = $("#inpsl").val()
+            var nxb = $("#inpnxb").val()
+            var ck = $("#inpck").val()
+            var theloai = theloaiArray.join(', ');
+            var row = `<tr>
+                <td>${dem++}</td>
+                <td>${maso}</td>
+                <td>${ha}</td>
+                <td>${ngay}</td>
+                <td>${sl}</td>
+                <td>${nxb}</td>
+                <td>${ck}</td>
+                <td>${theloai}</td>
+            </tr>`
+            $("#table1").append(row);
+        })
+        
+    })
+</script>
+</html>
+

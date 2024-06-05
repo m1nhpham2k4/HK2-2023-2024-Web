@@ -1,0 +1,34 @@
+body{
+    background:linear-gradient(to right, #f0b9f0, #abd2f9);
+}
+img{
+    width: 100%;
+}
+
+.container {
+        height: 80%;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+.btn-ellipse {
+    border-radius: 50px;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    font-size: 3vw; /* Kích thước văn bản dựa trên viewport width */
+    font-weight: bold;
+}
+
+footer {
+height: 20%;
+width: 100%;
+}

@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(90, 169, 225);
+}
+.header{
+    width: 100%;
+    border-bottom: 2px dashed white;
+    color: white;
+    line-height: 40px;
+}
+.menu li{
+    display: inline-block;
+
+}
+.menu a{
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+.menu a:hover{
+    color: black;
+}
+.information{
+    width: 50%;
+    height: 500px;
+    border-bottom: 3px dashed white;
+    display: block;
+    float: left;
+}
+.title{
+    font-size: 30px;
+    /* width: 58% !important; */
+    font-weight: bold;
+    float: right;
+    text-align: right !important;
+    text-shadow: 0px -2px 10px blue,0px 2px 10px blue;
+
+}
+.info-1{
+    font-weight: bold;
+    color:white;
+    margin-bottom: 30px;
+}
+.info-2{
+    /* font-weight: bold; */
+    color: white;
+}
+select{
+    background-color: white;
+}
+.form{
+    margin-left: 50px;
+}
+.mau1
+{
+    background-color: white;
+    color: white;
+}
+.mau{
+    color: white;
+}
+.choice{
+    margin-left: 210px;
+}
+.colorchu{
+    color: white;
+}
+.right{
+    width: 50%;
+    height: 500px;
+    border-bottom: 3px dashed white;
+    display: block;
+    float: left;
+}
+.img
+{
+    margin-top: 100px;
+    margin-left: 50;
+}
+.chu{
+    margin-left: 5px;
+    font-weight: bold;
+    color: blue;
+    text-shadow: 0px -2px 10px blue,0px 2px 10px blue;
+}
+.footer{
+    text-align: center;
+}

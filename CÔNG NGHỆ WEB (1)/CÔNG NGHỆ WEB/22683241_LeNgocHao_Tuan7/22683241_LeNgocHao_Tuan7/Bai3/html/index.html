@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="22683241 - Lê Ngọc Hảo - Tuần 7" content="Javascript – jQuery cơ bản (3 tiết)">
+   <title>Bai1</title>
+   <link rel="stylesheet" href="../../css/bootstrap.min.css">
+   <script src="../../js/bootstrap.min.js"></script>
+   <script src="../../js/bootstrap.bundle.js"></script>
+   <script src="../../js/jquery-3.7.1.min.js"></script>
+   <style>
+        #register-form td{
+            border: 1px solid black;
+            padding: 10px;
+        }   
+        #register-form table{
+            width: 100%;
+        }
+        .container{
+            border: 1px solid black;
+            padding: 10px;
+            background-color: #ecfdea;
+        }
+   </style>
+    <script>
+        $(document).ready(function () {
+            // kiemtra ten  : co it nhat 2 tu (Ho, ten) , ky tu dau phai in hoa
+            $("#txtname").blur(function (e) { 
+                e.preventDefault();
+                let ht=$("#txtname").val();
+                let regten=/^([A-Z][a-z]*\s)+([A-Z][a-z]*)$/;
+                if(!regten.test(ht))//sai : tb loi
+                {
+                    $(".erten").html("Ten sai!!!");
+                    return false;
+                }
+                else
+                {
+                    $(".erten").html("*");
+                    return true;
+                }
+
+                
+            });
+
+            $("#username").blur(function (e) { 
+                e.preventDefault();
+                let us=$("#username").val();
+                let regus=/^[A-Za-z]{3,}$/;
+
+                if(!regus.test(us))//sai : tb loi
+                {
+                    $(".ertendn").html("Ten DN sai!!!");
+                    return false;
+                }
+                else
+                {
+                    $(".ertendn").html("*");
+                    return true;
+                }
+
+                
+            });
+
+            $("#password").blur(function (e) { 
+                e.preventDefault();
+                let ps=$("#password").val();
+                //Mật khẩu: từ 8 ký tự trở lên, có ít nhất 1 ký tự số, 1 ký tự in hoa, 1 ký tự đặc biệt 
+                let regpass=/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()]).{8,}$/;
+                if(!regpass.test(ps))
+                {
+                    $(".erpass").html("từ 8 ký tự trở lên, có ít nhất 1 ký tự số, 1 ký tự in hoa, 1 ký tự đặc biệt");
+                    return false;
+                }
+                else
+                {
+                    $(".erpass").html("*");
+                    return true;
+                }
+                
+            });
+
+
+            $("#retype-password").blur(function (e) { 
+                e.preventDefault();
+                let reps=$("#retype-password").val();
+                let ps=$("#password").val();
+                if(ps!==reps)//sai
+                {
+                    $(".errepass").html("Mat khau nhap lai ko dung");
+                    return false;
+                }
+                else
+                {
+                    $(".errepass").html("*");
+                    return true;
+                }
+
+                
+            });
+    
+    $("#birthday").blur(function (e) { 
+        e.preventDefault();
+        //Ngày tháng năm sinh phải trên 16 tuổi
+        let ntns=$("#birthday").val();// text  ko la kieu Date
+
+        ntns = new Date(ntns);
+
+        let today = new Date();// dung
+        let tuoi= today.getFullYear()-ntns.getFullYear();
+        if(tuoi<16)
+        {
+            $(".erns").html("Ns phai cho tuoi tren 16");
+            return false;
+        }
+        else
+        {
+            $(".erns").html("*");
+            return true;
+        }
+       // console.log(ntns.getFullYear());
+        
+    });
+    
+
+    $("#telephone").blur(function (e) { 
+        e.preventDefault();
+        let    regDT=/^[0][3-9]\d{8}$/
+
+        let sdt=$("#telephone").val();        
+        if(!regDT.test(sdt))
+        {
+            alert("SDT Sai");
+            return false;
+        }
+    });
+
+    let i=1;
+    $("#register").click(function (e) { 
+        //e.preventDefault();
+        // luu localstorage
+        let ht=$("#txtname").val();
+        let ps=$("#password").val();
+        let sdt=$("#telephone").val();  
+        let ntns=$("#birthday").val();
+
+        // localStorage.setItem("hten",ht);
+        // let win= window.open("thongtin.html");
+        let row="<tr><td>"+i+"</td>   <td>"+ht+"</td><td>"+ps+"</td><td>"+ntns+"</td><td>"+sdt+"</td></tr>";
+        $("#tblinfo").append(row);
+        i++;
+        
+    });
+        });
+
+       
+    </script>
+</head>
+<body>
+   <div class="container text-primary mt-5">
+       <div class="row">
+        <div class="col-12">
+            <img src="../img/logo.PNG" alt="" class="img-fluid w-100">
+        </div>
+
+       </div>
+       <div class="row">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Trang chu </a> </li>
+                    <li class="nav-item">
+                        
+                        <a role="button" class="nav-link" href="#" data-bs-toggle="modal"  data-bs-target="#frmDK">Dang ky </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Lien he </a></li>
+                    
+
+                </ul>
+            </nav>
+
+
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <td>STT</td>
+                    <td>Hoten</td>
+                    <td>Mat khau</td>
+                    <td>Ngay sinh</td>
+                    <td>SDT</td>
+                  
+                </tr>
+            </thead>
+            <tbody id="tblinfo">
+                
+            </tbody>
+            </table>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-12">
+            <Footer>
+                MSSV-Hoten-Lop
+            </Footer>
+        </div>
+       </div>
+   </div>
+
+
+
+
+
+   <div class="modal fade" id="frmDK">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">Header</div>
+            <div class="modal-body">
+               
+                <form action="" id="register-form">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label  class="form-label">Họ và tên (*)</label>
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" name="name" id="txtname" class="form-control">
+                                    <span class="erten"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label  class="form-label">Tên Đăng Nhập (*)</label>
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" name="username" id="username" class="form-control">
+                                    <span class="ertendn"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label  class="form-label">Mật khẩu (*)</label>
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" name="password" id="password" class="form-control">
+                                    <span class="erpass"></span>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="retype-password" class="form-label">Xác nhận mật khẩu (*)</label>
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" name="retype-password" id="retype-password" class="form-control">
+                                    <span class="errepass"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label  class="form-label">Ngày sinh</label>
+                                </td>
+                                <td colspan="2">
+                                    <input type="date" name="birthdate" id="birthday">
+                                   <span class="erns"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="form-label">Điện thoại</label>
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" name="telephone" id="telephone" class="form-control">
+                                    <span class="erdt"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label  class="form-label">Địa chỉ</label>
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" name="address" id="address" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label  class="form-label">Email khác</label>
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" name="email" id="email" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label  class="form-label">Sở thích</label>
+                                </td>
+                                <td colspan="2">
+                                    <select name="hobby" id="hobby">
+                                        <option value="Ca nhạc">Ca nhạc</option>
+                                        <option value="Đọc sách">Đọc sách</option>
+                                        <option value="Xem phim">Xem phim</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    <button type="button" class="btn btn-secondary" id="register">Đăng ký</button>
+                                    <button type="button" class="btn btn-secondary" id="cancel">Hủy</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form> 
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-close" data-bs-dismiss="modal"></button>
+            </div>
+        </div>
+    </div>
+   </div>
+
+
+<!--Modal-->
+
+                <!-- -->
+</body>
+</html>

@@ -1,0 +1,233 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 8px 0 8px;
+    color: white;
+    background-color: rgb(41, 78, 121);
+}
+
+header .logo_space {
+    display: flex;
+    align-items: center;
+}
+
+.logo_space .logo {
+    width: 60px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.logo_text h1 {
+    padding-left: 8px;
+    font-weight: 100;
+}
+
+.logo_text sub {
+    font-size: 32px;
+}
+
+header li {
+    display: inline-block;
+    background-color: rgb(80, 121, 255);
+    margin-left: 20px;
+    padding: 8px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+}
+
+header li:hover {
+    background-color: blue;
+}
+
+header .header_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+header input,
+header button {
+    padding: 4px;
+    border: 1px solid rgb(135, 169, 255);
+    color: white;
+    background-color: rgb(20, 41, 91);
+}
+
+header input::placeholder {
+    color: white;
+}
+
+header button {
+    margin-left: 8px;
+}
+
+header button:hover {
+    background-color: blue;
+}
+
+
+/*======content======*/
+
+.container {
+    padding: 8px;
+    display: flex;
+}
+
+.left {
+    padding: 16px;
+    color: #666;
+}
+
+.content {
+    float: left;
+    width: 60%;
+}
+
+.content h1 {
+    display: block;
+    width: 100%;
+    border-bottom: 2px dashed #666;
+}
+
+.content p {
+    text-align: justify;
+    color: red;
+    text-shadow: 4px 6px 4px green;
+    padding-right: 12px;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+.content form {
+    width: 100%;
+}
+
+.form_item {
+    width: 50%;
+    float: left;
+    margin-bottom: 16px;
+}
+
+.form_item input {
+    display: block;
+    width: 90%;
+    padding: 8px;
+}
+
+.form_item label {
+    display: block;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+}
+
+.message {
+    width: 97%;
+}
+
+.btn {
+    padding: 6px;
+    border-radius: 0;
+    border: 1px solid #999;
+}
+
+.left h1,
+aside h1 {
+    border-bottom: 1.6px dashed #666;
+    margin-bottom: 16px;
+    padding: 16px 0;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: gray;
+}
+
+
+/*====== info =====*/
+
+.info {
+    margin-left: 80px;
+    color: #666;
+    display: inline-block;
+}
+
+.info_text {
+    margin: 16px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*====== aside =====*/
+
+aside {
+    width: 650px;
+    height: 100%;
+    margin: 32px 8px 0 0;
+    background-color: rgb(246, 246, 246);
+    padding: 16px 32px;
+}
+
+aside img {
+    width: 100%;
+}
+
+aside a {
+    float: right;
+    color: blue;
+}
+
+aside a:hover {
+    color: darkblue;
+    cursor: pointer;
+}
+
+aside h1 {
+    color: #666;
+}
+
+aside p {
+    padding: 16px 0;
+}
+
+
+/*====== footer =====*/
+
+footer {
+    background-color: rgb(13, 23, 65);
+    color: white;
+    padding: 16px;
+    margin-top: 4px;
+}
+
+footer span {
+    color: rgb(149, 182, 195);
+}

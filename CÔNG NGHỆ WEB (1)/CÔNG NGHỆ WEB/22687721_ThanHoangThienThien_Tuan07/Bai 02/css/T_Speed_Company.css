@@ -1,0 +1,28 @@
+header{
+    height: auto;
+    background-image: url(../images/header.jpg);
+    background-size: cover;
+    font-family: 'copperplate', 'Courier New', Courier, monospace;
+    font-size: 80px;
+    font-weight: bold;
+    text-shadow: gray -4px 3px 3px;
+    padding-top: 280px;
+    text-align: right;
+    padding-right: 10%;
+    color: rgb(95, 15, 155);
+}
+table{
+    float: left;
+    font-weight: bold;
+}
+.title{
+    color: rgb(32, 14, 197);
+}
+button{
+    border-radius: 5px;
+    border: 2px solid rgb(30, 6, 86);
+    background-color: rgb(242, 240, 244);
+}
+td>img{
+    width: 80%;
+}

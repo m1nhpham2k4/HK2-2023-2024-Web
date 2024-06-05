@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Gallery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="text-star">Animal Gallery</h3>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <a href="../img/lion.jpg" class="lightbox">
+                    <img src="../img/lion.jpg" class="img-fluid" alt="Lion">
+                    <div class="text-center mt-2">Lion</div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <a href="../img/cat.jpg" class="lightbox">
+                    <img src="../img/cat.jpg" class="img-fluid" alt="Cat">
+                    <div class="text-center mt-2">Cat</div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <a href="../img/bird.jpg" class="lightbox">
+                    <img src="../img/bird.jpg" class="img-fluid" alt="Bird">
+                    <div class="text-center mt-2">Bird</div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <a href="../img/panda.jpg" class="lightbox">
+                    <img src="../img/panda.jpg" class="img-fluid" alt="Panda">
+                    <div class="text-center mt-2">Panda</div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <a href="../img/Rhino.jpg" class="lightbox">
+                    <img src="../img/Rhino.jpg" class="img-fluid" alt="Rhino">
+                    <div class="text-center mt-2">Rhino</div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <a href="../img/sheep.jpg" class="lightbox">
+                    <img src="../img/sheep.jpg" class="img-fluid" alt="Sheep">
+                    <div class="text-center mt-2">Sheep</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.lightbox');
+    </script>
+</body>
+
+</html>

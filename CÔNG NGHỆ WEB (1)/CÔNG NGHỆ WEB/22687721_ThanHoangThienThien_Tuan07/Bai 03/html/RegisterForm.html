@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/RegisterForm.css">
+    <title>Form</title>
+    <script>
+        $(document).ready(function() {
+            // Validate full name: at least 2 words with the first letter capitalized
+            $("#fullname").blur(function() {
+                let name = $("#fullname").val();
+                let regName = /^([A-Z][a-z]*\s)+([A-Z][a-z]*)$/;
+                if (!regName.test(name)) {
+                    $(".erten").html("Tên sai!!!");
+                    return false;
+                } else {
+                    $(".erten").html("*");
+                    return true;
+                }
+            });
+
+            // Validate username: at least 3 alphabetical characters
+            $("#username").blur(function() {
+                let username = $("#username").val();
+                let regUsername = /^[A-Za-z]{3,}$/;
+                if (!regUsername.test(username)) {
+                    $(".ertendn").html("Tên DN sai!!!");
+                    return false;
+                } else {
+                    $(".ertendn").html("*");
+                    return true;
+                }
+            });
+
+            // Validate password: at least 8 characters, 1 uppercase, 1 number, 1 special character
+            $("#password").blur(function() {
+                let password = $("#password").val();
+                let regPassword = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()]).{8,}$/;
+                if (!regPassword.test(password)) {
+                    $(".erpass").html("Mật khẩu phải có ít nhất 8 ký tự, 1 chữ hoa, 1 số, 1 ký tự đặc biệt");
+                    return false;
+                } else {
+                    $(".erpass").html("*");
+                    return true;
+                }
+            });
+
+            // Validate confirmation password
+            $("#confirm_password").blur(function() {
+                let confirmPassword = $("#confirm_password").val();
+                let password = $("#password").val();
+                if (confirmPassword !== password) {
+                    $(".errepass").html("Mật khẩu nhập lại không khớp");
+                    return false;
+                } else {
+                    $(".errepass").html("*");
+                    return true;
+                }
+            });
+
+            // Validate birthday: user must be at least 16 years old
+            $("#birthday").blur(function() {
+                let birthday = $("#birthday").val();
+                let today = new Date();
+                let birthDate = new Date(birthday);
+                let age = today.getFullYear() - birthDate.getFullYear();
+                if (age < 16) {
+                    $(".erns").html("Ngày sinh phải cho tuổi trên 16");
+                    return false;
+                } else {
+                    $(".erns").html("*");
+                    return true;
+                }
+            });
+
+            // Validate email address
+            $("#email").blur(function() {
+                let email = $("#email").val();
+                let regEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!regEmail.test(email)) {
+                    $(".eremail").html("Email không hợp lệ");
+                    return false;
+                } else {
+                    $(".eremail").html("*");
+                    return true;
+                }
+            });
+
+            // Validate telephone number
+            $("#telephone").blur(function() {
+                let regTelephone = /^[0][3-9]\d{8}$/;
+                let telephone = $("#telephone").val();
+                if (!regTelephone.test(telephone)) {
+                    $(".erphone").html("Số điện thoại không hợp lệ");
+                    return false;
+                } else {
+                    $(".erphone").html("*");
+                    return true;
+                }
+            });
+
+            // Register button click event
+            $("#register").click(function(e) {
+                e.preventDefault();
+                // Validate form before submission
+                if (!validateForm()) {
+                    return;
+                }
+                // Add user info to table
+                let name = $("#fullname").val();
+                let password = $("#password").val();
+                let birthday = $("#birthday").val();
+                let telephone = $("#telephone").val();
+                let email = $("#email").val();
+                let row = "<tr><td>" + name + "</td><td>" + password + "</td><td>" + birthday + "</td><td>" + telephone + "</td><td>" + email + "</td></tr>";
+                $("#tblinfo").append(row);
+
+                // Show success message
+                $("#successMessage").html("Đăng ký thành công!").fadeIn();
+            });
+            // Function to validate the entire form
+            function validateForm() {
+                let isValid = true;
+                $(".error").html("");
+                if (!$("#fullname").val()) {
+                    $(".erten").html("Vui lòng nhập họ và tên");
+                    isValid = false;
+                }
+                if (!$("#username").val()) {
+                    $(".ertendn").html("Vui lòng nhập tên đăng nhập");
+                    isValid = false;
+                }
+                if (!$("#password").val()) {
+                    $(".erpass").html("Vui lòng nhập mật khẩu");
+                    isValid = false;
+                }
+                if (!$("#confirm_password").val()) {
+                    $(".errepass").html("Vui lòng xác nhận mật khẩu");
+                    isValid = false;
+                }
+                if (!$("#birthday").val()) {
+                    $(".erns").html("Vui lòng nhập ngày sinh");
+                    isValid = false;
+                }
+                if (!$("#telephone").val()) {
+                    $(".erphone").html("Vui lòng nhập số điện thoại");
+                    isValid = false;
+                }
+                if (!$("#email").val()) {
+                    $(".eremail").html("Vui lòng nhập email");
+                    isValid = false;
+                }
+                return isValid;
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <p class="text-center">Register Form</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td class="text-right"><label for="fullname">Họ và tên (*):</label></td>
+                    <td><input type="text" name="fullname" id="fullname" required><span class="error erten"></span></td>
+                </tr>
+                <tr>
+                    <td class="text-right"><label for="username">Tên Đăng nhập (*):</label></td>
+                    <td><input type="text" name="username" id="username" required><span class="error ertendn"></span></td>
+                </tr>
+                <tr>
+                    <td class="text-right"><label for="password">Mật khẩu (*):</label></td>
+                    <td><input type="password" name="password" id="password" required><span class="error erpass"></span></td>
+                </tr>
+                <tr>
+                    <td class="text-right"><label for="confirm_password">Xác nhận mật khẩu (*):</label></td>
+                    <td><input type="password" name="confirm_password" id="confirm_password" required><span class="error errepass"></span></td>
+                </tr>
+                <tr>
+                    <td class="text-right"><label for="birthday">Ngày sinh:</label></td>
+                    <td><input type="date" name="birthdate" id="birthday" required><span class="error erns"></span></td>
+                </tr>
+                <tr>
+                    <td class="text-right"><label for="telephone">Điện thoại:</label></td>
+                    <td><input type="text" name="phone" id="telephone" required><span class="error erphone"></span></td>
+                </tr>
+                <tr>
+                    <td class="text-right"><label for="email">Email (*):</label></td>
+                    <td><input type="email" name="email" id="email" required><span class="error eremail"></span></td>
+                </tr>
+
+                <tr>
+                    <td class="text-right">Sở thích</td>
+                    <td>
+                        <select name="sothich" id="sothich">
+                            <option value="Ca nhạc">Ca nhạc</option>
+                            <option value="Du lịch">Du lịch</option>
+                            <option value="Thể thao">Thể thao</option>
+                            <option value="Đọc sách">Đọc sách</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+
+                        <button type="button" class="btn btn-secondary" id="register">Đăng ký</button>
+                        <button type="button" class="btn btn-secondary" id="cancel">Hủy</button>
+
+
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id="successMessage" class="alert alert-success" style="display: none;"></div>
+
+    </div>
+</body>
+
+</html>

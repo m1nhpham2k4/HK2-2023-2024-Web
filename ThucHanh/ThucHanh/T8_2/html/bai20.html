@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script>
+        let i = 0
+        function dangky(){
+            let hoten = document.getElementById("txtHoten").value
+            let lop = document.getElementById("selLop").value
+            let monhoc = document.getElementById("selMonhoc").value
+
+            let loai = "Ly thuyet"
+            if(document.getElementById("rdoThuchanh").checked)
+            loai = "Thuc hanh"
+
+            let row = " <tr>" +
+                            "<td>"+(++i)+"</td>" + 
+                            "<td>"+hoten+"</td>" +
+                            "<td>"+lop+"</td>" +
+                            "<td>"+monhoc+"</td> " +
+                            "<td>"+loai+"</td>" +
+                        "</tr>"
+            
+            // let myTable = document.getElementsByTagName("tbody")[0]
+
+            let myTable = document.getElementById("tbl")
+
+            let newRow = myTable.insertRow(myTable.rows.length)
+
+            newRow.innerHTML = row
+                    
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <div class="row m-3" >
+                <label for="txtHoten" class="col-md-2">Ho ten: </label>
+                <input type="text" id="txtHoten" class="form-control col-md-4">
+            </div>
+
+            <div class="row m-3" >
+                <label for="selLop" class="col-md-2">Lop: </label>
+                <select id="selLop" class="col-md-4">
+                    <option value="Dai hoc ky thuat phan mem 16A">Dai hoc ky thuat phan mem 16A</option>
+                    <option value="Dai hoc ky thuat phan mem 16B">Dai hoc ky thuat phan mem 16B</option>
+                    <option value="Dai hoc ky thuat phan mem 16ATT" selected>Dai hoc ky thuat phan mem 16ATT</option>
+                </select>
+            </div>
+            <div class="row m-3" >
+                <label for="selMonhoc" class="col-md-2">Mon hoc: </label>
+                <select id="selMonhoc" class="col-md-4">
+                    <option value="Lap trinh huong doi tuong">Lap trinh huong doi tuong</option>
+                    <option value="He thong cong nghe Web" selected>He thong cong nghe Web</option>
+                    <option value="Lap trinh HS kien Java" selected>Lap trinh HS kien Java</option>
+                </select>
+            </div>
+            <div class="row m-3" >
+                <label for="" class="col-md-2">Loai: </label>
+                <input type="radio" name="rdoLoai" id="rdoLythuyet" checked> <label for="rdoLythuyet">Ly thuyet</label>
+                <input type="radio" name="rdoLoai" id="rdoThuchanh" class="ml-4"> <label for="rdoThuchanh">Thuc hanh</label>
+            </div>
+            <div class="row m-3" >
+                <button type="button" class="btn btn-primary" onclick="dangky()">Dang ky</button>
+            </div>
+            <div class="row m-3" >
+                <table class="table table-hover table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Ho ten</th>
+                            <th>Lop</th>
+                            <th>Mon hoc</th>
+                            <th>Loai</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl">
+                        <!-- <tr>
+                            <td>1</td>
+                            <td>Le Lan</td>
+                            <td>Dai hoc ky thuat phan mem 16A</td>
+                            <td>He thong cong nghe Web</td>
+                            <td>Thuc hanh</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

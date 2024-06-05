@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/T_Speed_Company.css">
+    <title>Car</title>
+    <style>
+        .ermua {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#muavao").focus(function(e) {
+
+
+            });
+
+            function ktra(giatri, loi) {
+                let reg = /^[0-9]+$/;
+
+                if (!reg.test(giatri)) {
+                    $(loi).html("Giá trị phải là số!!!");
+                    return false;
+                } else {
+                    $(loi).html("(*)");
+                    return true;
+
+                }
+
+            }
+            $("#muavao").blur(function(e) {
+                let valmua = $("#muavao").val();
+                ktra(valmua, ".ermua");
+
+
+            });
+
+            $("#banra").blur(function(e) {
+                let valban = $("#banra").val();
+                ktra(valban, ".erban");
+                if (!ktra(valban, ".erban")) {
+                    $("#state").attr("disabled", true);
+                }
+
+                $("#state").attr("disabled", false);
+
+
+            });
+
+            $("#loaixe").change(function(e) {
+                let xe = $("#loaixe").val();
+                let path, pricar;
+                let vtri = xe.indexOf(";");
+                path = xe.substr(0, vtri);
+                pricar = xe.substr(vtri + 1, xe.length);
+                $("#hinhxe").attr("src", path);
+                $("#gia").html(pricar);
+            });
+
+            $("#update-btn").click(function() {
+                var loaiTienTe = $("input[name='tiente']:checked").val();
+                var muavao = $("#muavao").val();
+                var banra = $("#banra").val();
+
+                if (loaiTienTe == 1) {
+                    $("#vang-mua-vao").text(muavao);
+                    $("#vang-ban-ra").text(banra);
+                } else {
+                    $("#usa-mua-vao").text(muavao);
+                    $("#usa-ban-ra").text(banra);
+                }
+            });
+
+            var muavaoInput = document.getElementById('muavao');
+            var stateButton = document.getElementById('state');
+            muavaoInput.focus();
+            stateButton.disabled = true;
+
+            muavaoInput.addEventListener('blur', function() {
+                if (!isNaN(parseFloat(muavaoInput.value)) && isFinite(muavaoInput.value) && muavaoInput.value.trim() !== '') {
+                    stateButton.disabled = false;
+                } else {
+                    stateButton.disabled = true;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        T-SPEED COMPANY
+    </header>
+    <section>
+        <table class="table table-bordered col-3">
+            <tr class="table-active text-center title">
+                <td colspan="2">Bảng tin thị trường</td>
+            </tr>
+            <tr class="table-active text-primary text-center">
+                <td colspan="2">Vàng</td>
+            </tr>
+            <tr class="text-primary text-center">
+                <td>Mua vào</td>
+                <td>Bán ra</td>
+            </tr>
+            <tr class="text-center">
+                <td id="vang-mua-vao"></td>
+                <td id="vang-ban-ra"></td>
+            </tr>
+            <tr class="table-active text-primary text-center">
+                <td colspan="2">USD</td>
+            </tr>
+            <tr class="text-primary text-center">
+                <td id="usa-mua-vao"></td>
+                <td id="usa-ban-ra"></td>
+            </tr>
+        </table>
+        <table class="table table-bordered col-5 table-secondary">
+            <tr class=" text-center title">
+                <td colspan="2">Cập nhật giá cả thị trường</td>
+            </tr>
+            <tr>
+                <td>Mua vào</td>
+                <td><input type="text" id="muavao"><span class="ermua">(*)</span></td>
+            </tr>
+            <tr>
+                <td>Bán ra</td>
+                <td><input type="text" id="banra"><span class="erban">(*)</span></td>
+            </tr>
+            <tr>
+                <td>Loại xe</td>
+                <td>
+                    <select name="loaixe" id="loaixe">
+                        <option value="../images/car1.png;35000">Toyota</option>
+                        <option value="../images/car2.png;15000">KIA</option>
+                        <option value="../images/car3.png;40000">Ford</option>
+                        <option value="../images/car4.png;32000">Civic</option>
+                        <option value="../images/car5.png;50000">Ferrari</option>
+                        <option value="../images/car6.png;45000">Mercedes</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="radio" name="tiente" value="1" checked="checked">
+                    <label for="tiente">Vàng</label>
+                    <input type="radio" name="tiente" value="0">
+                    <label for="tiente">USD</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button id="update-btn">Update</button>
+                    <button id="state" disabled>State</button>
+                </td>
+            </tr>
+        </table>
+        <table class="table table-bordered col-4">
+            <tr class="table-active text-center title">
+                <td>Bảng báo giá</td>
+            </tr>
+            <tr class="text-primary">
+                <td>
+                    <div id="infor">
+                        <p>-với kiểu dáng thể thao, sang trọng</p>
+                        <p>-nổi bật, ít tốn nhiên liệu</p>
+                        <p>-kiểu dáng thể thao</p>
+                    </div>
+                </td>
+            </tr>
+            <tr class="table-active text-center">
+                <td>
+                    <img src="../images/car1.png" alt="Toyota" id="hinhxe">
+
+                </td>
+            </tr>
+            <tr class="text-success">
+                <td>Giá:
+                    <span id="gia">35000</span>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <script src="../js/T_Speed_Company.js"></script>
+</body>
+
+</html>

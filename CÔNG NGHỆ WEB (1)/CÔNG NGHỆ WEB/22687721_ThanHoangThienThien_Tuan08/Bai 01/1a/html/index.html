@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form81a</title>
+    <link rel="stylesheet" href="../bootstrap-4.4.1-dist/css/bootstrap.css">
+    <script src="../bootstrap-4.4.1-dist/js/jquery-3.4.1.min.js"></script>
+    <script src="../bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            let stt = 1;
+
+            function Dangky() {
+                // Lấy giá trị từ các trường nhập liệu
+                let ten = $("#txttendn").val();
+                let mk = $("#txtmk").val();
+                let confirm_mk = $("#txtcheckmk").val();
+                let ho_ten = $("#txtname").val();
+                let ns = $("#datens").val();
+                let diachi = $("#txtdiachi").val();
+                let sdt = $("#txtsdt").val();
+                let email = $("#txtemail").val();
+
+                // Kiểm tra các điều kiện
+                if (kttendn() && ktns() && ktDienThoai() && ktEmail()) {
+                    if (mk.length < 8) {
+                        alert("Mật khẩu phải có ít nhất 8 ký tự");
+                        return;
+                    }
+                    if (mk !== confirm_mk) {
+                        alert("Nhập lại mật khẩu không khớp");
+                        return;
+                    }
+                    let ho_ten_pattern = /^[A-Z][a-zA-Z]+\s[A-Z][a-zA-Z]+$/; // Họ, Tên viết hoa chữ đầu
+                    if (!ho_ten_pattern.test(ho_ten)) {
+                        alert("Họ tên không hợp lệ");
+                        $("#ername").html("* Họ và tên là trường bắt buộc").css("color", "red");
+                        return;
+                    } else {
+                        $("#ername").html("");
+                    }
+
+                    // Nếu tất cả các điều kiện đều đúng, thực hiện đăng ký
+                    let tbl = $("#tbl");
+                    let newRow = "<tr><td>" + stt + "</td><td>" + ten + "</td></tr>";
+                    tbl.append(newRow);
+                    stt++; // Tăng giá trị của biến stt lên mỗi khi thực hiện đăng ký
+                    alert("Đăng ký thành công!");
+                }
+            }
+
+            function kttendn() {
+                let ten = $("#txttendn").val();
+                let pattendn = /^\w{3,}$/; // Tên đăng nhập bắt đầu là ký tự, có hoặc không có ký tự số, không có khoảng trắng
+                let errElement = $("#ertendn");
+                if (pattendn.test(ten)) {
+                    errElement.html("*").css("color", "red");
+                    return true;
+                } else {
+                    errElement.html("Tên đăng nhập không hợp lệ").css("color", "red");
+                    return false;
+                }
+            }
+
+            function ktns() {
+                let ns = $("#datens").val(); // string
+                ns = new Date(ns);
+                let namht = new Date();
+                let tuoi = namht.getFullYear() - ns.getFullYear();
+                if (tuoi < 18) // sai
+                {
+                    $("#erns").html("Tuổi phải trên 18").css("color", "red");
+                    return false;
+                } else {
+                    $("#erns").html("*").css("color", "red");
+                    return true;
+                }
+            }
+
+            function ktDienThoai() {
+                let sdt = $("#txtsdt").val();
+                let errElement = $("#ersdt");
+                let sdt_pattern = /^(09|03|07|08|05|04|06)+([0-9]{8})$/; // Bắt đầu là 09, 03, 07, 08, 05, tổng cộng 10 ký tự số
+                if (sdt_pattern.test(sdt)) {
+                    errElement.html("*").css("color", "red");
+                    return true;
+                } else {
+                    errElement.html("Số điện thoại không hợp lệ").css("color", "red");
+                    return false;
+                }
+            }
+
+            function ktEmail() {
+                let email = $("#txtemail").val();
+                let errElement = $("#eremail");
+                let email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Đúng định dạng email
+                if (email_pattern.test(email)) {
+                    errElement.html("*").css("color", "red");
+                    return true;
+                } else {
+                    errElement.html("Email không hợp lệ").css("color", "red");
+                    return false;
+                }
+            }
+
+            $("#frmDK").on("hidden.bs.modal", function() {
+                $("form")[0].reset();
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <button class="btn btn-primary" data-toggle='modal' data-target='#frmDK'>Open Form</button>
+        <table class="table table-bordered" id="tbl">
+            <tr>
+                <th>
+                    STT
+                </th>
+                <th>Tên Đăng Nhập</th>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- thiet ke modal -->
+    <div class="modal" id='frmDK'>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="text-center w-auto font-weight-bold m-4">ĐĂNG KÝ TÀI KHOẢN</h1>
+
+                </div>
+                <div class="modal-body">
+                    <form action="" class="" onsubmit="event.preventDefault(); Dangky()">
+                        <div class="form-group form-check-inline w-100">
+                            <label for="fullname" class="col-form-label text-right" style="width: 200px;">Tên đăng nhập: </label>
+                            <input type="text" name="fullname" id="txttendn" class="w-100 ml-3" placeholder="Nhập vào tên đăng nhập" />
+                            <div id='ertendn'>*</div>
+
+                        </div>
+
+                        <div class="form-group form-check-inline w-100">
+                            <label for="mk" class="col-form-label text-right" style="width: 200px;">Mật khẩu: </label>
+                            <input type="password" name="mk" id="txtmk" class="w-100 ml-3" placeholder="Nhập vào mật khẩu" />
+                        </div>
+
+                        <div class="form-group form-check-inline w-100">
+                            <label for="mk" class="col-form-label text-right" style="width: 200px;">Nhập lại mật khẩu: </label>
+                            <input type="password" name="mk" id="txtcheckmk" class="w-100 ml-3" placeholder="Nhập vào xác nhận mật khẩu" />
+                        </div>
+
+                        <h4 class="text-center">THÔNG TIN CÁ NHÂN</h4>
+
+                        <div class="form-group form-check-inline  w-100">
+                            <label for="" class="col-form-labe text-right" style="width: 200px;">Họ và tên: </label>
+                            <input class="w-100 ml-3" type="text" id="txtname" placeholder="Nhập vào họ tên (bắt buộc)">
+                            <div id='ername' class='error-message'></div>
+                        </div>
+
+                        <div class="form-group form-check-inline w-100">
+                            <label for="" class="col-form-label text-right " style="width: 168px;">Ngày sinh: </label>
+                            <input type="date" name="" id="datens" style="width: 200px; " class="ml-3" />
+                            <div id='erns' class='error-message'></div>
+                        </div>
+
+                        <div class="form-group form-check-inline w-100">
+                            <label for="" class="col-form-label text-right ml-3" style="width: 150px;">Giới tính: </label>
+                            <input type="radio" name="gt" style="margin-left: 5px; width: 30px;">Nam
+                            <input type="radio" name="gt" style="margin-left: 5px; width: 30px;">Nữ
+                        </div>
+
+                        <div class="form-group form-check-inline w-100">
+                            <label for="mk" class="col-form-label text-right" style="width: 200px;">Địa chỉ: </label>
+                            <input type="text" name="mk" id="txtdiachi" class="w-100 ml-3" placeholder="Nhập vào địa chỉ" />
+                        </div>
+
+                        <div class="form-group form-check-inline w-100">
+                            <label for="mk" class="col-form-label text-right" style="width: 200px;">Điện thoại: </label>
+                            <input type="text" name="mk" id="txtsdt" class="w-100 ml-3" placeholder="Nhập vào số điện thoại (9-10 số)" />
+                            <div id='ersdt' class='error-message'></div>
+                        </div>
+
+                        <div class="form-group form-check-inline w-100">
+                            <label for="mk" class="col-form-label text-right" style="width: 200px;">Email: </label>
+                            <input type="email" name="mk" id="txtemail" class="w-100 ml-3" placeholder="Nhập vào Email cá nhân theo dạng ten@tencongty.com" />
+                            <div id='eremail' class='error-message'></div>
+                        </div>
+                        <span style="color: red;" id="thongbao">*</span>
+                        <div class="text-center">
+                            <input type="submit" value="Đăng ký" class="text-white bg-dark">
+                            <button type="button" class="text-white bg-dark" data-dismiss="modal">Hủy</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

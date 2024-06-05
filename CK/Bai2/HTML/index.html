@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="../JS/jQuery.js"></script>
+    <style>
+        .header{
+            color: white;
+            position: absolute;
+        }
+    </style>   
+</head>
+<body>
+    <div class="container">
+        <h1 class="header" style="margin: 20px 0px 0px 200px; font-size: 75px;">TRẢI NGHIỆM BỮA ĂN SẠCH</h1>
+        <p class="header" style="margin: 100px 0px 0px 250px; font-size: 60px;">TƯƠI NGON GIÀU DINH DƯỠNG</p>
+        <!-- Button trigger modal -->
+        <button style="margin: 200px 0 0 600px;" type="button" class="btn btn-danger header" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          ĐẶT NGAY
+        </button>
+        <img src="../IMG/Banner.png" alt="" class="img-fluid w-100">
+    </div>
+    <div class="content text-center">
+        <h1>DANH SÁCH KHÁCH HÀNG</h1>
+        <table class="table table-bodered table-active" id="array">
+            <thead>
+                <th>SỐ TT</th>
+                <th>Họ tên KH</th>
+                <th>Địa chỉ</th>
+                <th>Thời gian giao hàng</th>
+                <th>Email</th>
+                <th>Điện thoại</th>
+            </thead>
+        </table>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">THÔNG TIN ĐẶT HÀNG</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" class="form">
+              <div class="form-group">
+                  <label for="" class="form-label">Họ tên</label>
+                  <input type="text" id="inpHT" class="form-control" placeholder="Nhập họ tên">
+                  <span id="errHT"></span>
+              </div>
+              <div class="form-group">
+                  <label for="" class="form-label">Địa chỉ</label>
+                  <input type="text" class="form-control" placeholder="Nhập địa chỉ" id="inpDC">
+                  <span id="errDC"></span>
+              </div>
+              <div class="form-group">
+                  <label for="" class="form-label">Thời gian giao hàng</label>
+                  <select id="sl-nh" name="" class="form-control form-select" aria-label="">
+                      <option>7:00 đến 8:30</option>
+                      <option>9:00 đến 10:30</option>
+                      <option>13:00 đến 14:30</option>
+                      <option></option>
+                  </select>
+                  <span id="errTG"></span>
+              </div>
+              <div class="form-group">
+                  <label for="" class="form-label">Email</label>
+                  <input type="text" class="form-control" id="inpEmail" placeholder="Nhập địa chỉ Email">
+                  <span id="errEmail"></span>
+              </div>
+              <div class="form-group">
+                  <label for="" class="form-label">Số điện thoại</label>
+                  <input type="text" class="form-control" placeholder="Nhập số điện thoại" id="inpSDT">
+                  <span id="errSDT"></span>
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
+          <button type="button" class="btn btn-primary" id="Dat">Đặt hàng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script>
+         $(function(){
+            
+            var hoten = 0,diachi = 0 ,e_mail = 0,sodt = 0;
+            $("#staticBackdrop").on('shown.bs.modal', function(){
+                $("#inpHT").focus();
+            });
+            $("#inpHT").blur(function(){
+                var ten = document.getElementById("inpHT").value;
+                if(ten == "" || ten == null){
+                    errHT.innerHTML = "Họ tên không được rỗng";
+                    hoten = 0;
+                    $("#inpHT").focus();
+                }
+                else{
+                    var reg = /^[A-Z]{1}[a-z]{0,6}(\s([A-Z]{1}[a-z]{0,6})){1,6}$/
+                    if(reg.test(ten)){
+                        errHT.innerHTML = ""
+                        hoten = 1
+                    }
+                    else{
+                        errHT.innerHTML = "Định dạng họ tên không hợp lệ vui lòng nhập lại";
+                        hoten = 0
+                        $("#inpHT").focus();
+                    }
+                }
+            })
+            $("#inpDC").blur(function(){
+                var dc = document.getElementById("inpDC").value;
+                if(dc == "" || dc == null){
+                    errDC.innerHTML = "Địa chỉ không được rỗng";
+                    diachi = 0
+                    $("#inpDC").focus();
+                }
+                else{
+                    var reg = /^[A-Z]{1,}$/
+                    if(reg.test(dc)){
+                        errDC.innerHTML = ""
+                        diachi = 1;
+                    }
+                    else{
+                        errDC.innerHTML = "Định dạng địa chỉ không hợp lệ vui lòng nhập lại";
+                        diachi = 0
+                        $("#inpDC").focus();
+                    }
+                }
+            })
+            $("#inpEmail").blur(function(){
+                var email = document.getElementById("inpEmail").value;
+                if(email == "" || email == null){
+                    errEmail.innerHTML = "Email không được rỗng";
+                    e_mail = 0;
+                    $("#inpEmail").focus();
+                }
+                else{
+                    var reg = /^[0][\w]{4}@iuh.edu.vn$/
+                    if(reg.test(email)){
+                        e_mail = 1
+                        errEmail.innerHTML = ""
+                    }
+                    else{
+                        errEmail.innerHTML = "Định dạng địa chỉ email không hợp lệ vui lòng nhập lại";
+                        e_mail = 0
+                        $("#inpEmail").focus();
+                    }
+                }
+            })
+            $("#inpSDT").blur(function(){
+                var SDT = document.getElementById("inpSDT").value;
+                if(SDT == "" || SDT == null){
+                    sodt = 0
+                    errSDT.innerHTML = "Số điện thoại không được rỗng";
+                    $("#inpSDT").focus();
+                }
+                else{
+                    var reg = /^[0][\d]{3}-[\d]{4}-[\d]{4}$/
+                    if(reg.test(SDT)){
+                        errSDT.innerHTML = ""
+                        sodt = 1
+                    }
+                    else{
+                        errSDT.innerHTML = "Định dạng số không hợp lệ không hợp lệ vui lòng nhập lại";
+                        $("#inpSDT").focus();
+                        sdt = 0;
+                    }
+                }
+            })
+            var sl_mh = 0;
+            $("#sl-nh").change(function(){
+                var sl = document.getElementById("sl-nh").value;
+                if(sl == "" || sl == null){
+                    sl_mh = 0
+                    errTG.innerHTML = "Thời gian không được rỗng";
+                    $("#sl-mh").focus();
+                }
+                else
+                    sl_mh = 1
+            })
+            var dem = 0
+            $("#Dat").click(function(){
+                var ht =  $("#inpHT").val();
+                var sdt =  $("#inpSDT").val();
+                var email =  $("#inpEmail").val();
+                var tg = $("#sl-nh").val()
+                var dc =  $("#inpDC").val();
+                var row = `<tr>
+                    <td>${dem++}</td>
+                    <td>${ht}</td>
+                    <td>${dc}</td>
+                    <td>${tg}</td>
+                    <td>${email}</td>
+                    <td>${sdt}</td>
+                </tr>`
+                if(hoten == 1&&diachi == 1&&sodt==1&& e_mail==1&& sl_mh==1){
+                    alert("Đặt hàng thành công")
+                    $("#array").append(row);
+                }
+                else{
+                    alert("Đặt hàng không thành công. Vui lòng check lại thông tin")
+                }
+            })
+         })
+    </script>
+</body>
+
+</html>

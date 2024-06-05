@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/tuan9bai1.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header style="background-image: url(../img/website.png);height:300px;background-repeat:no-repeat;background-size: cover;">
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-default">
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a href="" class="nav-link">Trang chủ</a></li>
+                <li class="nav-item"><a href="" class="nav-link" data-bs-toggle="modal" data-bs-target="#mymodal1">Đăng ký</a></li>
+            </ul>
+        </nav>
+        <div class="row">
+            <div class="col-12">
+                <h2 style="text-align: center;">LIST OF MEMBERS</h2>
+                <table class="table" id="table1">
+                    <tr>
+                        <td>STT</td>
+                        <td>Họ và tên</td>
+                        <td>Giới tính</td>
+                        <td>Số điện thoại</td>
+                        <td>Ngày Sinh</td>
+                        <td>Địa chỉ</td>
+                        <td>Khóa học</td>
+                        <td>Học phí</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal " aria-hidden="true" id="mymodal1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Thông Tin Học Viên</h1><button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="horizontal-form">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="">Họ và tên:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" name="" id="hoten" onblur="check_hoten()">
+                                    <span id="span1" class="text-danger">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="">Số điện thoại:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" name="" id="sodt" onblur="check_phone()">
+                                    <span id="span2" class="text-danger">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="">Ngày sinh:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="date" class="form-control" name="" id="birthdate" onblur="check_ngaysinh()">
+                                    <span id="span3" class="text-danger">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="">địa chỉ:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" name="" id="diachi">
+                                    <span id="span4" class="text-danger">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="">Bạn Muốn tham gia khóa nào?:</label>
+                                </div>
+                                <div class="col-9">
+                                    <select name="" id="optionss" class="form-control" onchange="khoa_hoc()">
+                                        <option value="2 tuần">2 tuần</option>
+                                        <option value="4 tuần">4 tuần</option>
+                                        <option value="6 tuần">6 tuần</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="">Học phí:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" name="" id="hocphi" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="">Ảnh đại diện:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="file" class="form-control" name="" id="anh" onblur="check_anh()">
+                                    <span id="span6" class="text-danger">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-danger w-100" onclick="dangky()" >Lưu</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

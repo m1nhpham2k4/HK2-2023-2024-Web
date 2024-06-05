@@ -1,0 +1,94 @@
+#wrapper
+{
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid white;
+    width: 60%;
+    box-shadow: 2px 2px 3px gray,-2px -2px 3px gray;
+}
+table
+{
+    /* border: 1px solid red; */
+    margin: 0 auto;
+}
+table tr>.Cot2
+{
+    line-height: 40px;
+}
+
+table .Cot1
+{
+    width: 150px;
+    text-align: right;
+}
+table .Cot2
+{
+    width: 300px; 
+    text-align: left;
+}
+
+.dorong
+{
+    width: 400px;
+}
+.nut
+{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.Cot3
+{
+    /* border: 1px solid red; */
+    /* text-align: left; */
+    /* width: 400px; */
+    color: red;
+    font-size: 13px;
+}
+#er-tendn
+{
+    position: absolute;
+    left: 557px;
+    height: 13px;
+    top: 125px;
+    width: auto;
+}
+
+#er-mk
+{
+    position: absolute;
+    left: 557px;
+    height: 13px;
+    top: 170px;
+    width: auto;
+}
+
+#er-nlmk
+{
+    position: absolute;
+    left: 557px;
+    height: 13px;
+    top: 215px;
+    width: auto;
+}
+
+#er-hoten
+{
+    position: absolute;
+    left: 557px;
+    height: 13px;
+    top: 317px;
+    width: auto;
+}
+
+#ersdt
+{
+    position: absolute;
+    left: 557px;
+    height: 13px;
+    top: 495px;
+    width: auto;
+}

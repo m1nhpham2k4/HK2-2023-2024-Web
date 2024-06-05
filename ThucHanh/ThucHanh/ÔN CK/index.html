@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="../jquery-3.6.0.js"></script>
+    <script src="../bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-md-12 border border-dark">
+            <img src="nen.jpg" alt="" class="img-fluid w-100">
+        </div>
+        <div class="col-md-12 border border-dark">
+            <nav class="navbar navbar-expand">
+                <ul class="navbar-nav nav">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Trang Chu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link" id="myBtn" data-toggle="modal" data-target="#myModal">
+                            Nhap sach
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-12 border border-dark">
+            <section class="table-reponsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td>STT</td>
+                            <td>Ma Sach</td>
+                            <td>Ngay Nhap</td>
+                            <td>So Luong</td>
+                            <td>Nha San Xuat</td>
+                            <td>Chiet Khau</td>
+                            <td>The Loai</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <div class="col-md-12 text-center">
+            <h1>20003005-Nguyễn Đình Thanh-DHKHMT16A</h1>
+        </div>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Nhap Kho sach online</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="txtms" class="control-label font-weight-bold col-md-3">Mã Sách</label>
+                                <div class="col-md-12">
+                                    <input type="text" id="txtms" class="form-control" placeholder="XXX-YYYY">
+                                    <span id="tbms" class="text-danger font-italic">(*)</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtnn" class="control-label font-weight-bold col-md-3">Ngày nhập</label>
+                                <div class="col-md-12">
+                                    <input type="date" id="txtnn" class="form-control" placeholder="XXX-YYYY">
+                                    <span id="tbnn" class="text-danger font-italic">(*)</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtsoluong" class="control-label font-weight-bold col-md-3">Số lượng</label>
+                                <div class="col-md-12">
+                                    <input type="text" id="txtsoluong" class="form-control">
+                                    <span id="tbsl" class="text-danger font-italic">(*)</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="control-label font-weight-bold col-md-3">Nhà xuất bản</label>
+                                <div class="col-md-12">
+                                    <select name="loainxb" id="txtnxn" class="form-control">
+                                        <option value="NSBKD" selected>Nhà xuất bản kim đồng</option>
+                                        <option value="NXBT">Nhà xuất bản trẻ</option>
+                                        <option value="NXBTGM">Nhà xuất bản thế giới mới</option>
+                                        <option value="NXBTT">Nhà xuất bản tri thức</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtchietkhau" class="control-label font-weight-bold col-md-3">Chiết
+                                    khấu</label>
+                                <div class="col-md-12">
+                                    <input type="text" id="txtchietkhau" class="form-control" value="20%" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txttheloai" class="control-label font-weight-bold col-md-3">Chiết
+                                    khấu</label>
+                                <div class="col-md-12">
+                                    <input type="radio" name="txttheloai" id="" checked value="Văn học"> Văn học
+                                    <input type="radio" name="txttheloai" id="" value="Khoa học">Khoa học
+                                    <input type="radio" name="txttheloai" value="Thiếu nhi" id="">Thiếu nhi
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" id="btnSave" class="btn btn-primary">Nhập kho</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

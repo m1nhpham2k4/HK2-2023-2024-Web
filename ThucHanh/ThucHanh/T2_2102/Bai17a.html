@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="background-color: yellowgreen;">
+        <form action="#">
+            <h3 style="text-align: center;"><b>Survey Form</b></h3>
+            <p>
+                If you are interested in purchasing one or more of our products, before ordering please complete some or all of the following survey for out marketing department. Answering any question is optional, and all information will be kepr sreictly confidential. Thank you very much for your time!
+            </p>
+            <ol >
+                <li>
+                    What is your name?<br>
+                    <input type="text" name="name" id="name">
+                </li>
+                <li>
+                    What is your date of birth?
+                    <br>
+                    <span>Month:</span> <select name="month" id="month">
+                        <option value="January">January</option>
+                        <option value="May">May</option>
+                        <option value="Jule">Jule</option>
+                    </select>
+                    <span>Date: </span><select name="day" id="day">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <span>Year: </span> <input type="text" size="2px">
+                </li>
+                <li>
+                    What is your malling address (if you would like to have a hard copy of our catalog sent to you)?
+                    <br>
+                    <textarea name="adrress" id="adrress" cols="45" rows="4" placeholder="Number/P.Q. Box/Route: &#10;Street/Avenue/Road:&#10;City:&#10;State/Zip:"></textarea>
+                </li>
+                <li>
+                    what is your email address?
+                    <br>
+                    <input type="email" name="txtemail" id="email">
+                </li>
+                <li>
+                    Have you viewed our product catalog?
+                    <br>
+                    <input type="radio" name="catalog_product" id="catalog_product_Yes">Yes
+                    <input type="radio" name="catalog_product" id="catalog_product_No">No
+                </li>
+                <li>
+                    If so, what product(s), besides the one you are ordering, might you be interested in purchasing in the future? (Check all that apply).
+                    <br>
+                    <input type="checkbox" name="vcr" id="checkvcr"> VCR
+                    <br>
+                    <input type="checkbox" name="vcr" id="checkvcr"> Big Screen TV
+                    <br>
+                    <input type="checkbox" name="vcr" id="checkvcr"> Audio Equipment
+                    <br>
+                    <input type="checkbox" name="vcr" id="checkvcr"> Video Equipment
+                    <br>
+                    <input type="checkbox" name="vcr" id="checkvcr"> Camera Equipment
+                    <br>
+                    <input type="checkbox" name="vcr" id="checkvcr" checked> Other <input type="text" name="Other" id="otherlist" placeholder="Please List: ">
+                </li>
+                <li>
+                    Do you have any question, comments or suggestions before proceeding to the Order Form?
+                    <textarea name="txtOrder" id="Order" cols="45" rows="5" placeholder="Your Input: "></textarea>
+                </li>
+            </ol>
+            <div align="center">
+                <input type="button" value="Send Form">
+                <input type="reset" value="Clear Form">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var soluong,x;
+        var ds=new Array(100);
+        soluong=prompt("Nhap so phong ban: ",10)-0;
+        for (i=0;i<soluong;i++)
+        {
+            ds[i]=prompt("Nhap ho ten: ");
+        }
+        ds.sort();
+
+        document.write("<h3> Danh sach phong ban sau khi sap xep </h3>");
+        for (x in ds) // ds["Thanh","Hieu"]
+        {
+            document.write(ds[x]+"<br>");
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="22687721_ThanHoangThienThien" content="Tuan05">
+    <title>About</title>
+       <!-- Latest compiled and minified CSS -->
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+       <!-- jQuery library -->
+       <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+   
+       <!-- Popper JS -->
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+   
+       <!-- Latest compiled JavaScript -->
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+       <!-- link icon  -->
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+       <link rel="stylesheet" href="../css/Bai3c_about.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+        <!-- Brand  -->
+        
+        <a href="#" class="navbar-brand mr-5"><h1>Feare</h1></a>
+
+            <!-- Links  -->
+            <ul class="navbar-nav ml-5 mr-5">
+                <li class="nav-item">
+                    <a href="Bai3a_home.html"  class="nav-link">HOME</a>
+                </li>
+    
+                <li class="nav-item">
+                    <a href="Bai3b_menu.html" class="nav-link">MENU</a>
+                
+                </li>
+                <li class="nav-item">
+                    <a href="Bai3c_about.html" class="nav-link">ABOUT</a>
+                
+                </li>
+                <li class="nav-item">
+                    <a href="Bai3d_bookTable.html" class="nav-link">BOOK TABLE</a>
+                </li>
+            </ul>
+
+        <ul class="navbar-nav ml-5">
+
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class='fas fa-bell' style='font-size:120%'></i></a>
+            
+            </li>
+
+            <li class="nav-item">
+                
+                <a href="#"  class="nav-link"><i class="fa fa-shopping-cart" style="font-size:120%"></i></a>
+            </li>
+           
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class="material-icons" style="font-size:120%">search</i></a>
+            
+            </li>
+
+            <li>
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#DangNhap">Đăng Nhập</button>
+            </li>
+        </ul>
+
+    </nav>
+
+    <div class="container">
+        <table class="table table-borderless">
+            <tr class="row">
+                <td class="col-6">
+                    <img src="../img/about-img.png" alt="about-img.png" style="width: 60%;">
+                </td>
+                <td class="col-6">
+                    <div class="BoxText" >
+                        <h1>Fast Food Restaurant</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, unde, ut odit perspiciatis soluta nulla aliquid alias explicabo fuga eos dignissimos molestias, obcaecati labore accusamus reiciendis iste odio magni in.</p>
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">Order Now</button>
+                </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <!--  Modal Order -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title"><p class="text-warning">Oder</p></h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form action="">
+                    <div class="form-group">
+                        <label for="tele">Telephone</label>
+                        <input type="number" class="form-control" id="tele" placeholder="Telephone" name="tele" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                      </label>
+                    </div>
+                  </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-warning">Order</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+       <!--  Modal đăng nhập -->
+       <div>
+        <div class="modal fade" id="DangNhap">
+         <div class="modal-dialog">
+             <div class="modal-content">
+
+                 <!-- modal header -->
+                 <div class="modal-header">
+                     <!-- <h1 class="modal-title">Đăng nhập</h1> -->
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 </div>
+
+                 <!-- modal body  -->
+                 <div class="modal-body">
+                     <div class="text-center">
+                         <img src="../img/DangNhap.png" alt="DangNhap.png" style="width: 50%;">
+                         <h2>Đăng Nhập Tài Khoản</h2>
+                     </div>
+
+                     
+                     <div>
+                         <form action="" class="needs-validation" novalidate>
+                             <div class="form-group">
+                                 <label for="email">Email</label>
+                                 <input type="text" class="form-control" id="email" placeholder="Email" name="email" required>
+                                 <div class="valid-feedback">Valid.</div>
+                                 <div class="invalid-feedback">Email không được để trống.</div>
+                             </div>
+ 
+                             <div class="form-group">
+                                 <label for="pwd">Mật khẩu</label>
+                                 <input type="password" class="form-control" id="pwd" placeholder="Password" name="pswd" required>
+                                 <div class="valid-feedback">Valid.</div>
+                                 <div class="invalid-feedback">Mật khẩu không được để trống.</div>
+                             </div>
+                             
+                             <div class="text-center">
+                                <button type="submit" class="btn btn-warning">ĐĂNG NHẬP</button>
+
+                             </div>
+                         </form>
+                     </div>
+                     
+                      <!-- quên mật khẩu -->
+                     <div>
+                         <a href="#" data-toggle="modal" data-target="#QMK" class="text-body">Quên mật khẩu?</a>
+                     </div>
+                 </div>
+
+                 <!-- modal footer  -->
+                 <div class="modal-footer">
+                     <p>Bạn chưa có tài khoản?</p>
+                     <a href="#" data-toggle="modal" data-target="#dangKy"><button type="button" class="btn btn-outline-warning">Đăng ký</button></a>
+                 </div>
+             </div>
+         </div>
+        </div>
+    </div>
+
+
+     <!-- Script  -->
+     <script>
+        // Disable form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Get the forms we want to add validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })(); 
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="22683241 - Lê Ngọc Hảo - Tuần 7" content="Javascript – jQuery cơ bản (3 tiết)">
+   <title>Bai1</title>
+   <link rel="stylesheet" href="../../css/bootstrap.min.css">
+   <script src="../../js/bootstrap.min.js"></script>
+   <script src="../../js/bootstrap.bundle.js"></script>
+   <script src="../../js/jquery-3.7.1.min.js"></script>
+   <style>
+        .container{
+            border: 1px solid black;
+            padding: 10px;
+            background-color: #ecfdea;
+        }
+   </style>
+    <script>
+$(document).ready(function () {
+    let name=localStorage.getItem("hten");
+    $("#info").html(name);
+
+
+});
+
+        // $(document).ready(function(e){
+        //     var name = localStorage.getItem("name");
+        //     var username = localStorage.getItem("username");
+        //     var password = localStorage.getItem("password");
+        //     var telephone = localStorage.getItem("telephone");
+        //     var address = localStorage.getItem("address");
+        //     var email = localStorage.getItem("email");
+        //     var birthdate = localStorage.getItem("birthdate");
+        //     var hobby = localStorage.getItem("hobby");
+
+        //     $("#info").html(    "<p><strong>Họ và Tên:</strong> " + name + "</p>" +
+        //                         "<p><strong>Tên Đăng Nhập:</strong> " + username + "</p>" +
+        //                         "<p><strong>Mật Khẩu:</strong> **********</p>" +
+        //                         "<p><strong>Ngày Sinh:</strong> " + birthdate + "</p>" +
+        //                         "<p><strong>Điện Thoại:</strong> " + telephone + "</p>" +
+        //                         "<p><strong>Địa Chỉ:</strong> " + address + "</p>" +
+        //                         "<p><strong>Email:</strong> " + email + "</p>" +
+        //                         "<p><strong>Sở Thích:</strong> " + hobby + "</p>"
+        //     )
+        // })
+        
+
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Thông Tin Đăng Ký</h1>
+        <div id="info"></div>
+</body>
+</html>

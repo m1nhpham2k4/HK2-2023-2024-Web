@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Bootstrap/css/bootstrap.css">
+    <script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/jquery-3.7.1.js"></script>
+
+    <style>
+        small {
+            color: red;
+            font-size: 15;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="../IMG/banner2.png" alt="" class="img-fluid">
+        </header>
+        <nav class="nav mt-1">
+            <a class="nav-link h5" href="#" aria-current="page">Shein.com</a>
+            <a class="nav-link" href="#" aria-current="page">Trang chủ</a>
+            <a class="nav-link" href="#" aria-current="page">Giới thiệu</a>
+            <a class="nav-link" href="#" aria-current="page">Trang phục công sở</a>
+            <a class="nav-link" href="#" aria-current="page">Phụ kiện</a>
+            <a class="nav-link" href="#" aria-current="page">Bộ sưu tập</a>
+            <button class="btn btn-danger rounded-1" data-bs-toggle="modal" data-bs-target="#modal_DatHang">Đặt mua</button>
+        </nav>
+
+        <body>
+            <h1>Danh sách đơn đặt hàng</h1>
+            <table class="table table-bordered" id="main_table">
+                <thead>
+                    <tr>
+                        <th scope="col">Số tt</th>
+                        <th scope="col">Họ tên khách hàng</th>
+                        <th scope="col">Điện thoại</th>
+                        <th scope="col">Địa chỉ</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Đơn giá</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Thành tiền</th>
+                        <th scope="col">Phương thức thanh toá
+                            <nav></nav>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </body>
+        <footer>
+            <div class="bg-danger text-light text-center">
+                <h6>Thông tin sinh viên:</h6>
+                <p>Họ tên: </p>
+                <p>Mã sinh viên:</p>
+                <p>Mã lớp:</p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal" id="modal_DatHang">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-info">
+                <div class="modal-header">
+                    <h3>Thông tin đặt hàng</h3>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <table class="table table-borderless">
+                            <tr>
+                                <td><label for="Hoten">Họ tên khách hàng</label></td>
+                                <td><input type="text" class="form-control" id="HoTen">
+                                    <small></small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="DienThoai">Điện thoại</label></td>
+                                <td><input type="text" class="form-control" id="DienThoai">
+                                    <small></small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="DiaChi">Địa chỉ</label></td>
+                                <td><input type="text" class="form-control" id="DiaChi">
+                                    <small></small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="Sanpham">Chọn sản phẩm</label></td>
+                                <td>
+                                    <select name="SP" id="SanPham" class="form-select">
+                                        <option value="Áo thun cây thông Noel">Áo thun cây thông Noel</option>
+                                        <option value="Đầm công sở A1">Đầm công sở A1</option>
+                                        <option value="Chân váy Coton">Chân váy Coton</option>
+                                    </select>
+                                    <small></small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="DonGia">Đơn giá</label></td>
+                                <td><input type="text" id="DonGia" class="form-control" disabled></td>
+                            </tr>
+                            <tr>
+                                <td><label for="SoLuong">Số lượng</label></td>
+                                <td><input type="text" id="SoLuong" class="form-control">
+                                    <small></small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="HTThanhToan">Chọn hình thức thanh toán</label></td>
+                                <td>
+                                    <input type="radio" name="HT">Thanh toán khi nhận hàng
+                                    <br>
+                                    <input type="radio" name="HT">Thanh toán online
+                                </td>
+                                <small></small>
+                            </tr>
+                            <tr>
+                                <td><label for="ThanhTien">Thành tiền</label></td>
+                                <td><input type="text" id="ThanhTien" class="form-control" disabled></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" id="Dat">Đặt mua</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#DonGia').val('350000')
+
+            $('#HoTen').blur(function() {
+                let HoTen = $('#HoTen')
+                if (HoTen.val() == '') {
+                    HoTen.next().text('Họ tên không được rỗng')
+                    HoTen.next().show()
+                    HoTen.focus()
+                } else {
+                    let kitu = HoTen.val()
+                    var check = true
+                    for (var i = 0; i < kitu.length; i++) {
+                        if (!/^[A-Z][a-z]*/.test(kitu[i])) {
+                            HoTen.next().text('Họ tên phải bắt đầu bằng kí tự hoa')
+                            HoTen.next().show()
+                            HoTen.focus()
+                            check = false
+                            break
+                        }
+                    }
+                    if (check) {
+                        HoTen.next().text("")
+                    }
+                }
+            })
+
+            $('#DienThoai').blur(function() {
+                let DienThoai = $('#DienThoai')
+                if (DienThoai.val() == '') {
+                    DienThoai.next().text('Điện thoại không được rỗng')
+                    DienThoai.next().show()
+                    DienThoai.focus()
+                } else if (!/\d{10}}/.test(DienThoai.val())) {
+                    DienThoai.next().text('Số điện thoại có định dạng 10 số')
+                    DienThoai.next().show()
+                    DienThoai.focus()
+                } else if (!/^(09|03|08)/.test(DienThoai.val)) {
+                    DienThoai.next().text('Số điện thoại được bắt đầu với 09,03,08')
+                    DienThoai.next().show()
+                    DienThoai.focus()
+                } else {
+                    DienThoai.next().text("")
+                }
+            })
+
+            $('#DiaChi').blur(function() {
+                let DiaChi = $('#DiaChi')
+                if (DiaChi.val() == '') {
+                    DiaChi.next().text('Địa chỉ không được rỗng')
+                    DiaChi.focus()
+                } else {
+                    DiaChi.next().text("")
+                }
+            })
+
+            $('#SanPham').change(function() {
+                let SanPham = $('#SanPham').val()
+                if (SanPham == 'Áo thun cây thông Noel') {
+                    $('#DonGia').val('350000')
+                } else if (SanPham == 'Đầm công sở A1') {
+                    $('#DonGia').val('500000')
+                } else if (SanPham == 'Chân váy Coton') {
+                    $('#DonGia').val('550000')
+                }
+            })
+
+            $('#SoLuong').blur(function() {
+                let SoLuong = $('#SoLuong')
+                if (SoLuong.val() == '') {
+                    SoLuong.next().text("Số lượng không được rỗng")
+                    SoLuong.focus()
+                } else if (!/\d+/.test(SoLuong.val())) {
+                    SoLuong.next().text("Số lượng phải là số")
+                    SoLuong.focus()
+                } else {
+                    var so = parseInt(SoLuong.val())
+
+                    var check = true
+
+                    if (so < 1 || so > 50) {
+                        SoLuong.next().text("Số lượng từ 1 - 50")
+                        SoLuong.focus()
+                    } else {
+                        let DonGia = $('#DonGia').val()
+                        var thanh_tien = so * DonGia
+                        $('ThanhTien').val(thanh_tien)
+
+                        SoLuong.next().text("")
+                    }
+                }
+            })
+            $('#Dat').click(function() {
+                let name = $('#HoTen').val
+                let dt = $('#DienThoai').val()
+                let dc = $('#DiaChi').val()
+                let sp = $('#SanPham').val()
+                let dg = $('#DonGia').val()
+                let sl
+
+                let row = `<tr>
+                <td>${name}</td>
+                <td>${dt}</td>
+                <td>${dc}</td>
+                <td>${sp}</td>
+                <td>${dg}</td>
+                <td>${name}</td>
+                <td>${name}</td>
+                <td>${name}</td>
+            </tr>`
+            })
+        })
+    </script>
+</body>
+
+</html>

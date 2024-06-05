@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+#container{
+    width: 900px;
+    margin: 0 auto;
+}
+.header__brand-name{
+    background: url('https://www.htmlandcssbook.com/code-samples/chapter-17/images/header.jpg') no-repeat;
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-xl{
+    width: calc(100%/12);
+}
+.col-xl-9{
+    width: calc((100%/12)*9);
+}
+.col-xl-6{
+    width: calc((100%/12)*6);
+}
+.col-xl-3{
+    width: calc((100%/12)*3);
+}
+#container{
+    box-shadow: 1px 1px 2px #444, -1px -1px 2px #444;
+}
+.header__nav__list{
+    list-style-type: none;
+    background-color: #8d8377;
+}
+.header__nav__item {
+    text-align: center;
+}
+.header__nav__item__link{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 0;
+
+}
+.header__nav__item:hover .header__nav__item__link{
+    color: #000;
+    transition: 0.3s;
+}
+.box{
+    padding: 0 16px;
+}
+.box__item{
+    padding: 16px 0;
+}
+.box__item__img-box{
+    padding: 8px;
+    border: 1px solid #f2f2f2;
+}
+.box__item__img-box__image{
+    width: 100%;
+}
+.box__item__content{
+    padding-left: 16px;
+    padding-top: 16px;
+}
+.name-product{
+    color: #999;
+    font-size: 22px;
+}
+.status-product{
+    color: #e31759;
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+.description-product{
+    font-size: 14px;
+    color: #000;
+}
+.side-bar{
+    border-left: 1px solid #ccc;
+}
+.side-bar__name{
+    margin-top: 32px;
+    font-size: 28px;
+    color: #e31759;
+    margin-bottom: 16px;
+    padding-left: 10px;
+}
+.sider__bar__item__part1{
+    color: #e31759;
+    padding: 8px 0;
+    margin:0 16px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+.sider__bar__item__part2{
+    margin: 0 16px;
+    cursor: pointer;
+}

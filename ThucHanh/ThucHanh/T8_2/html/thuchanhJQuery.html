@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuc hanh JQuery</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/data.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#menuDatbao").click(function(){
+                $("#myModal").modal()
+            })
+
+            $("#datbao").click(function(){
+                let loaibao = []
+                if($("input[id='tthn']:checked"))
+                    loaibao.push("Tuoi tre hang ngay")
+                if($("input[id='ttc']:checked"))
+                    loaibao.push("Tuoi tre cuoi")
+                if($("input[id='ttcn']:checked"))
+                    loaibao.push("Tuoi tre chu nhat")
+                
+                alert(loaibao.join(", "))
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row navbar navbar-expand-md bg-light">
+            <a href="">
+                <img src="../img/brand.PNG" alt="" class="navbar-brand img-thumbnail">
+            </a>
+
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="bai21_danhsachsanpham.html">Products</a></li>
+                <li class="dropdown mt-2"><a class="dropdown-toggle" data-toggle="dropdown" href="">Dang ky</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a href="">Dang ky thanh vien</a></li>
+                        <li class="dropdown-item" id="menuDatbao"><a>Dang ky dat bao</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="">About</a></li>
+
+            </ul>
+        </div>
+
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Dat bao</th>
+                    <th>Ky bao</th>
+                    <th>Don gia</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>tt</td>
+                    <td>kb</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- modal --> 
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Dang ky dat bao</h3>
+                    <button class="close" data-dismiss="modal" type="button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="">Dang ky dat bao</label> <br>
+                            <input type="checkbox" id="tthn" checked> <label for="">Tuoi tre hang ngay</label>
+                            <input type="checkbox" id="ttc" checked> <label for="">Tuoi tre cuoi</label>
+                            <input type="checkbox" id="ttcn"> <label for="">Tuoi tre chu nhat</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Ky han</label> <br>
+                            <select  id="selKyhan" class="col-md-12">
+                                <option value="3thang">3 thang</option>
+                                <option value="6thang" selected>6 thang</option>
+                                <option value="12thang">1 nam</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Don gia</label>
+                            <input type="text" class="form-control" id="txtDongia" readonly>
+                        </div>
+
+                        <button type="button" id="datbao" class="btn btn-primary">Dat bao</button>
+                    </form>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+#menu .header
+{
+    list-style-type: none;
+}
+
+#menu a
+{
+    text-decoration: none;
+    color: white;
+}
+
+#menu li
+{
+    background-color: blue;
+    text-align: center;
+    width: 100px;
+    padding: 5px;
+    margin: 12px;
+    font-size: 14px;
+    line-height: 1.3em;
+    border: 2px dashed white;
+    border-radius: 10px;
+    box-shadow: 0 0 0 4px blue, 2px 1px 6px 4px black;
+    text-shadow: -1px -1px #aa3030;
+    font-weight: normal;
+}
+
+#menu li
+{
+    position: relative;
+}
+
+.menu-child
+{
+    display: none;
+    position:absolute;
+    list-style-type: none;
+    left: 110px;
+    top: -12px;
+}
+
+#menu li:hover .menu-child
+{
+    display: block;
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="../JS/jQuery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="../IMG/Header.png" alt="" class="img-fluid w-100">
+        </header>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <!-- Button trigger modal -->
+            <a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Đặt lịch
+            </a>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">ĐẶT LỊCH KHÁM BỆNH TRỰC TUYẾN</h5>
+                    <br>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="" class="form">
+                        <div class="form-group">
+                            <label for="">Mã bệnh nhân</label>
+                            <input type="text" class="form-control" id="inpma">
+                            <span style="color: red;" id="errma"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Hình thẻ bảo hiểm</label>
+                            <input type="file" class="form-control" id="thebh">
+                            <span style="color: red;" id="errthebh"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Ngày khám</label>
+                            <input type="date" class="form-control" id="ngaykham">
+                            <span style="color: red;" id="errngaykham"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Loại dịch vụ</label>
+                            <br>
+                            <input value="400000" type="checkbox" class="">Khám theo yêu cầu
+                            <input type="checkbox" value="600000" class="">Điều trị ngoại trú
+                            <br>
+                            <input type="checkbox" class="" value="500000">Bác sĩ theo yêu cầu
+                            <span style="color: red;"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tổng thành tiền</label>
+                            <input type="text" class="form-control" id="thanhtien">
+                            <span style="color: red;"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Chuyên khoa</label>
+                            <div class="mb-3">
+                              <select class="form-select" id="ck">
+                                <option value="Nhi">Nhi</option>
+                                <option value="Khoa tổng quát">Khoa tổng quát</option>
+                              </select>
+                            </div>
+                        </div>
+
+                        <div class="pt-3"><button type="button" class="btn btn-primary" id="dat">Đặt lịch</button></div>
+                        <br>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="Huy" onclick="hideModal()">Close</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <table class="table table-boderless" id="table1">
+            <thead>
+                <th>STT</th>
+                <th>Mã bệnh nhân</th>
+                <th>Thẻ bảo hiểm</th>
+                <th>Ngày đăng ký</th>
+                <th>Loại dịch vụ</th>
+                <th>Tổng thành tiền dịch vụ</th>
+                <th>Chuyên khoa</th>
+            </thead>
+        </table>
+    </div>
+
+    <script>
+      $(function(){
+        $("#inpma").blur(function(){
+          var ma = document.getElementById("inpma").value;
+          var reg = /^BN-\d{5}$/
+          if(!reg.test(ma)){
+            errma.innerHTML = "Mã có định dạng BN-YYYYY trong đó BN là cố định, YYYYY là 5 chữ số"
+          }
+          else{
+            errma.innerHTML = ""
+          }
+        })
+        $("#thebh").blur(function(){
+          var the = document.getElementById("thebh").value;
+          var reg = /^.+.jpg|.+.png|.+.gif$/
+          if(!reg.test(the)){
+            errthebh.innerHTML = "Hình ảnh có định dạng .png hoặc .jpg hoặc .gif"
+          }
+          else{
+            errthebh.innerHTML = ""
+          }
+        })
+        $("#ngaykham").change(function(){
+          var ngay = new Date($("#ngaykham").val())
+          var now = new Date()
+          if(ngay > now){
+            errngaykham.innerHTML = ""
+          }
+          else{
+            errngaykham.innerHTML = "Ngày khám phải sau ngày hiện tại"
+          }
+        })
+        var theloaiArray = [];
+        
+        $("input[type = 'checkbox']").change(function(){
+          var total = 0;
+          $("input[type = 'checkbox']:checked").each(function(){
+            if($(this).is(":checked")){
+              var value = parseInt($(this).val())
+              total += value;
+            }
+          })
+          $("#thanhtien").val(total)
+        })
+        $("#dat").click(function(){
+          var dem = 1;
+          var ma = $("#inpma").val()
+          var the = $("#thebh").val()
+          var ngaykham = $("#ngaykham").val()
+          var thanhtien = $("#thanhtien").val()
+          var ck = $("#ck").val()
+          var row = `<tr>
+                <td>${dem++}</td>
+                <td>${ma}</td>
+                <td>${the}</td>
+                <td>${ngaykham}</td>
+                <td>${thanhtien}</td>
+                <td>${ck}</td>
+            </tr>`
+            $("#table1").append(row);
+        })
+        $("#Huy").modal("hide");
+      })
+    </script>
+</body>
+</html>
